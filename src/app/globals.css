@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *::before,
+  *::after,
+  * {
+    @apply box-border p-0 m-0;
+  }
+
+  body {
+    @apply min-w-full min-h-full;
+  }
+
+  .nav__link {
+    @apply text-light-default text-sm font-semibold px-4 py-1.5 rounded-full hover:bg-light-default/10 hover:text-light-default transition duration-300;
+  }
+
+  .hero__ring {
+    @apply absolute inset-0 border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-success-secondary/5 shadow-[0_0_80px_inset] shadow-success-secondary/5;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply lg:max-w-5xl;
+  }
+}

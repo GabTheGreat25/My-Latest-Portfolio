@@ -1,0 +1,11 @@
+export { default as ArrowDown } from "./arrow-down.svg";
+export { default as ArrowUpRight } from "./arrow-up-right.svg";
+export { default as CheckCircle } from "./check-circle.svg";
+export { default as Chrome } from "./chrome.svg";
+export { default as CSS3 } from "./css3.svg";
+export { default as Github } from "./github.svg";
+export { default as HTML5 } from "./html5.svg";
+export { default as Javascript } from "./javascript.svg";
+export { default as ReactIcon } from "./react.svg";
+export { default as Sparkle } from "./sparkle.svg";
+export { default as Star } from "./star.svg";
