@@ -121,7 +121,8 @@ export function Hero() {
             </h1>
             <p className="mt-4 text-center text-light-default/60 md:text-lg">
               i specialize in transforming designs into functional,
-              high-performing web applications. Let's discuss your next project.
+              high-performing web applications. Let&#39;s discuss your next
+              project.
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
               <button className="inline-flex items-center gap-2 border border-light-default/15 px-6 h-12 rounded-xl">
@@ -130,7 +131,7 @@ export function Hero() {
               </button>
               <button className="inline-flex items-center gap-2 border border-light-default bg-white text-dark-default h-12 px-6 rounded-xl">
                 <span>👋</span>
-                <span className="font-semibold">Let's Connect</span>
+                <span className="font-semibold">Let&#39;s Connect</span>
               </button>
             </div>
           </div>
