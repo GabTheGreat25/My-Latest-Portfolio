@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { SectionHeader, Card, CardHeader, ToolboxItems } from "@/components";
 import * as Icon from "@/assets/icons";
 import { BookCover, Map, MemojiSmile } from "@/assets/images";
@@ -79,6 +80,8 @@ const hobbies = [
 ];
 
 export function About() {
+  const constraintsRef = React.useRef(null);
+
   return (
     <section className="py-20 lg:py-28">
       <div className="container">
@@ -94,8 +97,13 @@ export function About() {
                 title="My Reads"
                 description="Explore the books shaping my perspectives."
               />
-              <div className="w-40 mx-auto mt-2 md:mt-0">
-                <Image src={BookCover} alt="Book Cover" />
+              <div className="w-40 mx-auto mt-2 md:mt-0 relative group pointer-events-none">
+                <div className="absolute rounded-full h-[400px] w-[600px] bottom-0 left-1/2 -translate-x-1/2 bg-success-secondary/70 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10 transition-all duration-500 ease-in-out sm:group-hover:h-[500px] md:group-hover:h-[520px] group-hover:w-[700px] group-hover:bg-success-secondary/85 animation"></div>
+                <Image
+                  src={BookCover}
+                  alt="Book Cover"
+                  className="sm:hover:-translate-y-1 hover:translate-y-3 transition-transform duration-500 ease-in-out hover:scale-110 relative z-10 pointer-events-auto"
+                />
               </div>
             </Card>
             <Card className="h-[320px] md:col-span-3 lg:col-span-2">
@@ -104,11 +112,14 @@ export function About() {
                 description="Explore the technologies and tools I use to craft exceptional
                 digital experiences."
               />
-              <ToolboxItems items={toolBoxItems} />
+              <ToolboxItems
+                items={toolBoxItems}
+                itemsWrapperClassName="animate-move-left [animation-duration:20s] hover:[animation-play-state:paused]"
+              />
               <ToolboxItems
                 items={toolBoxItems}
                 className="mt-6"
-                itemsWrapperClassName="-translate-x-1/2"
+                itemsWrapperClassName="-translate-x-1/2 animate-move-right [animation-duration:20s] hover:[animation-play-state:paused]"
               />
             </Card>
           </div>
@@ -119,21 +130,23 @@ export function About() {
                 description="Explore my interests and hobbies beyond the digital realm."
                 className="p-6"
               />
-              <div className="relative flex-1">
+              <div className="relative flex-1" ref={constraintsRef}>
                 {hobbies.map((hobby) => (
-                  <div
+                  <motion.div
                     key={hobby.title}
                     className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-success-secondary to-info-default rounded-full py-1.5 absolute"
                     style={{
                       left: hobby.left,
                       top: hobby.top,
                     }}
+                    drag
+                    dragConstraints={constraintsRef}
                   >
                     <span className="font-medium text-dark-tertiary">
                       {hobby.title}
                     </span>
                     <span>{hobby.emoji}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </Card>
@@ -143,7 +156,9 @@ export function About() {
                 alt="Map"
                 className="h-full w-full object-cover object-left-top"
               />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full bg-gradient-to-r from-success-secondary to-info-default after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-dark-tertiary/30">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full  after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-dark-tertiary/30">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-success-secondary to-info-default -z-20 animate-ping [animation-duration:2s]"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-success-secondary to-info-default -z-10"></div>
                 <Image
                   src={MemojiSmile}
                   alt="Memoji Smile"
