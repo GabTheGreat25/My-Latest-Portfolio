@@ -18,7 +18,7 @@ export function HeroOrbit({
   orbitDuration?: string;
 }>) {
   return (
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-20">
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  pointer-events-none">
       <div
         className={twMerge(shouldOrbit === true && "animate-spin")}
         style={{
@@ -26,7 +26,7 @@ export function HeroOrbit({
         }}
       >
         <div
-          className="flex items-start justify-start"
+          className="flex items-start justify-start "
           style={{
             transform: `rotate(${rotation}deg)`,
             height: `${size}px`,
@@ -40,7 +40,7 @@ export function HeroOrbit({
             }}
           >
             <div
-              className="inline-flex"
+              className="inline-flex pointer-events-auto"
               style={{
                 transform: `rotate(${rotation * -1}deg)`,
               }}

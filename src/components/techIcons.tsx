@@ -1,11 +1,16 @@
 import React from "react";
 
-export function TechIcons({ component }: { component: React.ElementType }) {
+interface TechIconsProps {
+  component: React.ElementType;
+  size?: string;
+}
+
+export function TechIcons({ component, size = "size-10" }: TechIconsProps) {
   const Component = component;
 
   return (
     <React.Fragment>
-      <Component className="size-10 fill-[url(#tech-icon-gradient)]" />
+      <Component className={`${size} fill-[url(#tech-icon-gradient)]`} />
       <svg className="size-0 absolute">
         <linearGradient id="tech-icon-gradient">
           <stop offset="0%" stopColor="rgb(110 231 183)" />

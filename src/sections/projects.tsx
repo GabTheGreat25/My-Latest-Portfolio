@@ -47,7 +47,7 @@ const portfolioProjects = [
 
 export function Projects() {
   return (
-    <section className="pb-16 lg:py-24">
+    <div className="pb-16 lg:py-24">
       <div className="container">
         <SectionHeader
           eyebrow="Real-world Results"
@@ -104,6 +104,6 @@ export function Projects() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

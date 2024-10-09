@@ -83,7 +83,7 @@ export function About() {
   const constraintsRef = React.useRef(null);
 
   return (
-    <section className="py-20 lg:py-28">
+    <div className="py-20 lg:py-28">
       <div className="container">
         <SectionHeader
           eyebrow="About Me"
@@ -98,7 +98,7 @@ export function About() {
                 description="Explore the books shaping my perspectives."
               />
               <div className="w-40 mx-auto mt-2 md:mt-0 relative group pointer-events-none">
-                <div className="absolute rounded-full h-[400px] w-[600px] bottom-0 left-1/2 -translate-x-1/2 bg-success-secondary/70 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10 transition-all duration-500 ease-in-out sm:group-hover:h-[500px] md:group-hover:h-[520px] group-hover:w-[700px] group-hover:bg-success-secondary/85 animation"></div>
+                <div className="absolute rounded-full h-[400px] w-[600px] bottom-0 left-1/2 -translate-x-1/2 bg-success-secondary/70 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10 transition-all duration-500 ease-in-out sm:group-hover:h-[500px] md:group-hover:h-[520px] group-hover:w-[700px] group-hover:bg-success-secondary/85"></div>
                 <Image
                   src={BookCover}
                   alt="Book Cover"
@@ -169,6 +169,6 @@ export function About() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

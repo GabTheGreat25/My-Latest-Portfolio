@@ -11,3 +11,5 @@ export { default as MemojiAvatar4 } from "./memoji-avatar-4.png";
 export { default as MemojiAvatar5 } from "./memoji-avatar-5.png";
 export { default as MemojiComputer } from "./memoji-computer.png";
 export { default as MemojiSmile } from "./memoji-smile.png";
+export { default as BlobSunglasses } from "./blob-sunglasses.gif";
+export { default as MonaCat } from "./mona-cat.gif";

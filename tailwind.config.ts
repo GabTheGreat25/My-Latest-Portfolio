@@ -55,13 +55,19 @@ const config: Config = {
           },
         },
       },
+      scrollbar: {
+        primary: {
+          size: ".75rem",
+          track: {
+            background: "linear-gradient(to right, #6EE7B7, #38BCF6)",
+          },
+          thumb: { background: "#6EE7B7" },
+          hover: { background: "#10B981" },
+        },
+      },
       colors: {
         light: {
           default: "#FAF7F7",
-          shadow: "#4C4C4C",
-          secondary: "#BFBFBF",
-          tertiary: "#8692A6",
-          variant: "#F2F2F2",
         },
         dark: {
           default: "#1F2937",
@@ -81,6 +87,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@gradin/tailwindcss-scrollbar")],
 };
 export default config;

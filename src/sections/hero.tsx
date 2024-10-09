@@ -2,16 +2,63 @@
 
 import React from "react";
 import Image from "next/image";
-import { MemojiComputer, Grain } from "@/assets/images";
-import { ArrowDown, Star, Sparkle } from "@/assets/icons";
-import { HeroOrbit } from "@/components";
+import {
+  MemojiComputer,
+  Grain,
+  BlobSunglasses,
+  MonaCat,
+} from "@/assets/images";
+import * as Icon from "@/assets/icons";
+import { Resume } from "@/assets/files";
+import { HeroOrbit, TechIcons } from "@/components";
 
 export function Hero() {
+  const [isHovered, setIsHovered] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+  const [progress, setProgress] = React.useState(0);
+  const [showTransformed, setShowTransformed] = React.useState(false);
+  const [isTransitioning, setIsTransitioning] = React.useState(false);
+
+  const handleConnectClick = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setShowTransformed((prev) => !prev);
+      setIsTransitioning(false);
+    }, 800);
+  };
+
+  const handleDownload = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    setLoading(true);
+    setProgress(0);
+
+    const simulateProgress = (currentProgress: number) => {
+      if (currentProgress >= 100) {
+        setLoading(false);
+        setProgress(100);
+
+        window.open(Resume, "_blank");
+
+        const link = document.createElement("a");
+        link.href = Resume;
+        link.download = "Gabriel-Mendoza-Resume.pdf";
+        link.click();
+        return;
+      }
+
+      setProgress(currentProgress + 10);
+      setTimeout(() => simulateProgress(currentProgress + 10), 100);
+    };
+
+    simulateProgress(0);
+  };
+
   return (
-    <section className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
+    <div className="py-32 md:py-48 lg:py-60 z-0 relative overflow-x-clip">
       <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
         <div
-          className="absolute inset-0 -z-30 opacity-5"
+          className="absolute inset-0 opacity-5 -z-30"
           style={{
             backgroundImage: `url(${Grain.src})`,
           }}
@@ -20,85 +67,236 @@ export function Hero() {
         <div className="size-[820px] hero__ring"></div>
         <div className="size-[1020px] hero__ring"></div>
         <div className="size-[1220px] hero__ring"></div>
-        <HeroOrbit
-          size={430}
-          rotation={-14}
-          shouldOrbit
-          orbitDuration="30s"
-          shouldSpin
-          spinDuration="3s"
-        >
-          <Sparkle className="size-8 text-success-secondary/20" />
-        </HeroOrbit>
-        <HeroOrbit
-          size={440}
-          rotation={79}
-          shouldOrbit
-          orbitDuration="32s"
-          shouldSpin
-          spinDuration="3s"
-        >
-          <Sparkle className="size-5 text-success-secondary/20" />
-        </HeroOrbit>
-        <HeroOrbit size={520} rotation={-41} shouldOrbit orbitDuration="34s">
-          <div className="size-2 bg-success-secondary/20 rounded-full"></div>
-        </HeroOrbit>
-        <HeroOrbit
-          size={530}
-          rotation={178}
-          shouldOrbit
-          orbitDuration="36s"
-          shouldSpin
-          spinDuration="3s"
-        >
-          <Sparkle className="size-10 text-success-secondary/20" />
-        </HeroOrbit>
-        <HeroOrbit
-          size={550}
-          rotation={20}
-          shouldOrbit
-          orbitDuration="38s"
-          shouldSpin
-          spinDuration="6s"
-        >
-          <Star className="size-12 text-success-secondary" />
-        </HeroOrbit>
-        <HeroOrbit
-          size={590}
-          rotation={98}
-          shouldOrbit
-          orbitDuration="40s"
-          shouldSpin
-          spinDuration="6s"
-        >
-          <Star className="size-8 text-success-secondary" />
-        </HeroOrbit>
-        <HeroOrbit size={650} rotation={-5} shouldOrbit orbitDuration="42s">
-          <div className="size-2 bg-success-secondary/20 rounded-full"></div>
-        </HeroOrbit>
-        <HeroOrbit
-          size={710}
-          rotation={144}
-          shouldOrbit
-          orbitDuration="44s"
-          shouldSpin
-          spinDuration="3s"
-        >
-          <Sparkle className="size-14 text-success-secondary/20" />
-        </HeroOrbit>
-        <HeroOrbit size={720} rotation={85} shouldOrbit orbitDuration="46s">
-          <div className="size-3 bg-success-secondary/20 rounded-full"></div>
-        </HeroOrbit>
-        <HeroOrbit
-          size={800}
-          rotation={-72}
-          shouldOrbit
-          orbitDuration="48s"
-          shouldSpin
-          spinDuration="6s"
-        >
-          <Star className="size-28 text-success-secondary" />
-        </HeroOrbit>
+        {showTransformed ? (
+          <div
+            className={`transition-opacity duration-1000 ease-in-out ${isTransitioning ? "opacity-0" : "opacity-100"}`}
+          >
+            <HeroOrbit size={440} rotation={-14}>
+              <a
+                href="https://github.com/GabTheGreat25"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TechIcons component={Icon.Github} size={"size-16"} />
+              </a>
+            </HeroOrbit>
+            <HeroOrbit size={445} rotation={95}>
+              <a
+                href="https://www.chess.com/member/gaabsyy5"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TechIcons component={Icon.Chess} size={"size-16"} />
+              </a>
+            </HeroOrbit>
+            <HeroOrbit size={520} rotation={-41}>
+              <a
+                href="https://codepen.io/gabthegreat25"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TechIcons component={Icon.Codepen} size={"size-16"} />
+              </a>
+            </HeroOrbit>
+            <HeroOrbit size={525} rotation={233}>
+              <a
+                href="https://medium.com/@gabrielarafolmendoza25"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TechIcons component={Icon.Medium} size={"size-20"} />
+              </a>
+            </HeroOrbit>
+            <HeroOrbit size={530} rotation={150}>
+              <a
+                href="https://www.facebook.com/Codeeee_is_Lifeeee"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TechIcons component={Icon.Facebook} size={"size-16"} />
+              </a>
+            </HeroOrbit>
+            <HeroOrbit size={535} rotation={120}>
+              <a
+                href="https://stackoverflow.com/users/19642389/gabthegreat"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TechIcons component={Icon.Stackoverflow} size={"size-16"} />
+              </a>
+            </HeroOrbit>
+            <HeroOrbit size={540} rotation={200}>
+              <a
+                href="https://dev.to/gabthegreat25"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TechIcons component={Icon.DevTo} size={"size-16"} />
+              </a>
+            </HeroOrbit>
+            <HeroOrbit size={550} rotation={20}>
+              <a
+                href="https://discord.com/users/433106513280892928"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TechIcons component={Icon.Discord} size={"size-16"} />
+              </a>
+            </HeroOrbit>
+            <HeroOrbit size={560} rotation={-75}>
+              <a
+                href="https://open.spotify.com/user/31qvjsvrsasz3ywlhwvbuqpnjzvy"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TechIcons component={Icon.Spotify} size={"size-16"} />
+              </a>
+            </HeroOrbit>
+            <HeroOrbit size={565} rotation={75}>
+              <a
+                href="https://www.linkedin.com/in/gaabsyy25"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TechIcons component={Icon.LinkedIn} size={"size-16"} />
+              </a>
+            </HeroOrbit>
+            <HeroOrbit size={590} rotation={50}>
+              <a
+                href="https://t.me/Gabz092501"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TechIcons component={Icon.Telegram} size={"size-16"} />
+              </a>
+            </HeroOrbit>
+            <HeroOrbit size={600} rotation={97}>
+              <a
+                href="https://www.figma.com/@gabrielmendoza"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TechIcons component={Icon.Figma} size={"size-16"} />
+              </a>
+            </HeroOrbit>
+            <HeroOrbit size={605} rotation={263}>
+              <a
+                href="https://codesandbox.io/u/gabthegreat25"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TechIcons component={Icon.CodeSandbox} size={"size-16"} />
+              </a>
+            </HeroOrbit>
+            <HeroOrbit size={620} rotation={172}>
+              <a
+                href="https://twitter.com/Gaabsyy25"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TechIcons component={Icon.XTwitter} size={"size-16"} />
+              </a>
+            </HeroOrbit>
+            <HeroOrbit size={640} rotation={-5}>
+              <a
+                href="https://www.instagram.com/gabthegreat25"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TechIcons component={Icon.Instagram} size={"size-16"} />
+              </a>
+            </HeroOrbit>
+          </div>
+        ) : (
+          <div
+            className={`transition-opacity duration-1000 ease-in-out ${!isTransitioning ? "opacity-100" : "opacity-0"}`}
+          >
+            <HeroOrbit
+              size={430}
+              rotation={-14}
+              shouldOrbit
+              orbitDuration="30s"
+              shouldSpin
+              spinDuration="3s"
+            >
+              <Icon.Sparkle className="size-8 text-success-secondary/20" />
+            </HeroOrbit>
+            <HeroOrbit
+              size={440}
+              rotation={79}
+              shouldOrbit
+              orbitDuration="32s"
+              shouldSpin
+              spinDuration="3s"
+            >
+              <Icon.Sparkle className="size-5 text-success-secondary/20" />
+            </HeroOrbit>
+            <HeroOrbit
+              size={520}
+              rotation={-41}
+              shouldOrbit
+              orbitDuration="34s"
+            >
+              <div className="size-2 bg-success-secondary/20 rounded-full"></div>
+            </HeroOrbit>
+            <HeroOrbit
+              size={530}
+              rotation={178}
+              shouldOrbit
+              orbitDuration="36s"
+              shouldSpin
+              spinDuration="3s"
+            >
+              <Icon.Sparkle className="size-10 text-success-secondary/20" />
+            </HeroOrbit>
+            <HeroOrbit
+              size={550}
+              rotation={20}
+              shouldOrbit
+              orbitDuration="38s"
+              shouldSpin
+              spinDuration="6s"
+            >
+              <Icon.Star className="size-12 text-success-secondary" />
+            </HeroOrbit>
+            <HeroOrbit
+              size={590}
+              rotation={98}
+              shouldOrbit
+              orbitDuration="40s"
+              shouldSpin
+              spinDuration="6s"
+            >
+              <Icon.Star className="size-8 text-success-secondary" />
+            </HeroOrbit>
+            <HeroOrbit size={650} rotation={-5} shouldOrbit orbitDuration="42s">
+              <div className="size-2 bg-success-secondary/20 rounded-full"></div>
+            </HeroOrbit>
+            <HeroOrbit
+              size={710}
+              rotation={144}
+              shouldOrbit
+              orbitDuration="44s"
+              shouldSpin
+              spinDuration="3s"
+            >
+              <Icon.Sparkle className="size-14 text-success-secondary/20" />
+            </HeroOrbit>
+            <HeroOrbit size={720} rotation={85} shouldOrbit orbitDuration="46s">
+              <div className="size-3 bg-success-secondary/20 rounded-full"></div>
+            </HeroOrbit>
+            <HeroOrbit
+              size={800}
+              rotation={-72}
+              shouldOrbit
+              orbitDuration="48s"
+              shouldSpin
+              spinDuration="6s"
+            >
+              <Icon.Star className="size-28 text-success-secondary" />
+            </HeroOrbit>
+          </div>
+        )}
       </div>
       <div className="container">
         <div className="flex flex-col items-center justify-center">
@@ -116,27 +314,85 @@ export function Hero() {
             </div>
           </div>
           <div className="max-w-lg mx-auto">
-            <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 tracking-wide">
-              Building Exceptional User Experiences
+            <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 sm:mx-4 mx-0 tracking-wide">
+              I&rsquo;m{" "}
+              <span className="tracking-widest bg-gradient-to-r from-success-secondary to-info-default text-center text-transparent bg-clip-text animate-shine shadow-lg glow">
+                Gabriel
+              </span>{" "}
+              A Full Stack Developer
             </h1>
-            <p className="mt-4 text-center text-light-default/60 md:text-lg">
-              i specialize in transforming designs into functional,
-              high-performing web applications. Let&#39;s discuss your next
-              project.
+            <p className="mt-4 md:mx-2 mx-4 text-justify text-light-default/80 md:text-sm text-xs">
+              As a cum laude graduate holding a Bachelor of Science in
+              Information Technology from the Technological University of the
+              Philippines - Taguig, I am driven by a passion for leveraging
+              technology to create meaningful change. With a solid foundation in
+              IT concepts and a commitment to continuous learning, I am equipped
+              to contribute effectively to the development of cutting-edge
+              technologies. My goal is to apply my knowledge and skills to
+              innovate solutions that address real-world challenges and drive
+              positive impact.
             </p>
             <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
-              <button className="inline-flex items-center gap-2 border border-light-default/15 px-6 h-12 rounded-xl">
-                <span className="font-semibold">Explore My work</span>
-                <ArrowDown className="size-4" />
-              </button>
-              <button className="inline-flex items-center gap-2 border border-light-default bg-white text-dark-default h-12 px-6 rounded-xl">
-                <span>👋</span>
-                <span className="font-semibold">Let&#39;s Connect</span>
+              <a
+                href={Resume}
+                download="Gabriel-Mendoza-Resume.pdf"
+                onClick={handleDownload}
+                className={`inline-flex items-center gap-2 border border-light-default/15 px-6 h-12 rounded-xl z-50 relative overflow-clip`}
+              >
+                {loading ? (
+                  <div className="flex flex-col">
+                    <div>
+                      <span className="font-semibold p-1">{`Downloading ${progress}%`}</span>
+                    </div>
+                    <div className="w-full bg-light-default/40 rounded-full h-1.5 mt-1 mb-2">
+                      <div
+                        className="rounded-full bg-gradient-to-r from-success-secondary to-info-default h-full"
+                        style={{ width: `${progress}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    className="relative group hover:scale-105 duration-300 ease-in-out inline-flex items-center gap-x-3"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                  >
+                    <div className="absolute rounded-full group-hover:h-[500px] group-hover:w-[250px] top-0 left-1/2 -translate-x-1/2 group-hover:bg-success-secondary/90 group-hover:[mask-image:radial-gradient(100%_100%_at_bottom_center,black,black_70%,transparent)] group-hover:transition-all group-hover:duration-500 group-hover:ease-in-out"></div>
+                    <span className="font-semibold">Download Resume</span>
+                    <Icon.ArrowDown
+                      className={`size-4 transition-transform duration-500 ${
+                        isHovered ? "rotate-90" : "rotate-0"
+                      }`}
+                    />
+                  </div>
+                )}
+              </a>
+              <button
+                onClick={handleConnectClick}
+                className="inline-flex items-center gap-2 border border-light-default bg-light-default text-dark-default h-12 px-6 rounded-xl z-50 hover:bg-gradient-to-r from-success-secondary/60 to-info-default/60 hover:border-transparent pointer-events-none duration-300 ease-in-out"
+              >
+                <div className="hover:scale-105 duration-300 ease-in-out pointer-events-auto">
+                  {showTransformed ? (
+                    <div className="inline-flex items-center gap-2">
+                      <span className="font-semibold">Let&#39;s Go Back</span>
+                      <Image
+                        src={BlobSunglasses}
+                        alt="BlobSunglasses"
+                        className="size-6"
+                      />
+                    </div>
+                  ) : (
+                    <div className="inline-flex items-center gap-2">
+                      <span className="font-semibold">Let&#39;s Connect</span>
+                      <span>👋</span>
+                    </div>
+                  )}
+                </div>
               </button>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

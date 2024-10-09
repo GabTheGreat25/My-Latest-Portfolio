@@ -6,7 +6,7 @@ import { Grain } from "@/assets/images";
 
 export function Contact() {
   return (
-    <section className="pb-16 pt-12 lg:pb-24 lg:pt-20">
+    <div className="pb-16 pt-12 lg:pb-24 lg:pt-20">
       <div className="container">
         <div className="bg-gradient-to-r from-success-secondary to-info-default text-dark-variant py-8 px-10 rounded-3xl text-center md:text-left relative overflow-hidden z-0">
           <div
@@ -34,6 +34,6 @@ export function Contact() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
