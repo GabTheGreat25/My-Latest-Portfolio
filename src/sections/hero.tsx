@@ -78,7 +78,7 @@ export function Hero() {
             </HeroOrbit>
             <HeroOrbit size={445} rotation={95}>
               <a
-                href="https://www.chess.com/member/gaabsyy5"
+                href="https://www.chess.com/member/gaabsyy"
                 target="_blank"
                 rel="noreferrer"
                 className="hero__hover"

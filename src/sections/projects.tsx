@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import * as Mockup from "@/assets/images";
 import { CheckCircle, ArrowUpRight } from "@/assets/icons";
@@ -12,9 +12,13 @@ const portfolioProjects = [
     year: "Present",
     title: "Own Projects",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      {
+        title: "Focused on backend with Node, Express, Nest, Fastify",
+      },
+      {
+        title: "Developed frontend with React, Next, Angular, Vue",
+      },
+      { title: "Integrated databases with MongoDB, PostgreSQL, MySQL" },
     ],
     link: "https://youtu.be/4k7IdSLxh6w",
     image: Mockup.OwnProjects,
@@ -24,9 +28,18 @@ const portfolioProjects = [
     year: "2024",
     title: "E-Learning Platform",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      {
+        title:
+          "Built the frontend using React, Vite, and Million.js for optimal performance",
+      },
+      {
+        title:
+          "Styled with Tailwind CSS and DaisyUI for a responsive user interface",
+      },
+      {
+        title:
+          "Managed state and data fetching with Redux Toolkit and RTK Query",
+      },
     ],
     link: "https://youtu.be/4k7IdSLxh6w",
     image: Mockup.ELearning,
@@ -36,9 +49,15 @@ const portfolioProjects = [
     year: "2024",
     title: "Quick Forms Api",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Developed backend using Express, Node.js, and MongoDB" },
+      {
+        title:
+          "Implemented clean architecture, Cloudinary integration, and email services",
+      },
+      {
+        title:
+          "Utilized Postman for testing and applied RBAC using MongoDB discriminators",
+      },
     ],
     link: "https://youtu.be/4k7IdSLxh6w",
     image: Mockup.QuickForms,
@@ -48,9 +67,15 @@ const portfolioProjects = [
     year: "2024",
     title: "Lhanlee Beauty Lounge",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      {
+        title:
+          "Built with MERN stack, enhanced by Million.js and Redux Toolkit",
+      },
+      {
+        title:
+          "Integrated PayMaya payments, Twilio notifications, and React Native",
+      },
+      { title: "UI powered by Tailwind CSS, hosted on Render and Vercel" },
     ],
     link: "https://youtu.be/4k7IdSLxh6w",
     image: Mockup.LhanleeSalon,
@@ -60,10 +85,17 @@ const portfolioProjects = [
     year: "2023",
     title: "Camera Rental",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      {
+        title:
+          "Developed with MERN stack, enhanced by Redux Toolkit and RTK Query",
+      },
+      {
+        title:
+          "Integrated Material-UI for a responsive and modern user interface",
+      },
+      { title: "Backend hosted on Render, frontend deployed via Vercel" },
     ],
+
     link: "https://youtu.be/7hi5zwO75yc",
     image: Mockup.CameraRental,
   },
@@ -72,9 +104,12 @@ const portfolioProjects = [
     year: "2023",
     title: "Final-Project-ITOS322-T",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      {
+        title:
+          "Built with Tailwind, SCSS, HTML, and JavaScript for flexibility",
+      },
+      { title: "Tailwind and SCSS enabled a modern, responsive design" },
+      { title: "Deployed the application using GitHub Pages for easy access" },
     ],
     link: "https://youtu.be/Z7I5uSRHMHg",
     image: Mockup.VloggersTv,
@@ -84,10 +119,11 @@ const portfolioProjects = [
     year: "2023",
     title: "BAUCHA Crypto Voucher",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Contributed to the frontend development using React" },
+      { title: "Collaborated on UI/UX design with Figma for a cohesive look" },
+      { title: "Gained hands-on experience in a hackathon team environment" },
     ],
+
     link: "https://youtu.be/4k7IdSLxh6w",
     image: Mockup.Baucha,
   },
@@ -96,10 +132,11 @@ const portfolioProjects = [
     year: "2022",
     title: "Laravel Pet Care",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      { title: "Built with Laravel for both backend and frontend development" },
+      { title: "Styled with Tailwind to achieve a modern, responsive design" },
+      { title: "Enhanced interactivity using JavaScript for dynamic features" },
     ],
+
     link: "https://youtu.be/7hi5zwO75yc",
     image: Mockup.PetCare,
   },
@@ -108,10 +145,11 @@ const portfolioProjects = [
     year: "2022",
     title: "Php Pet Clinic",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Developed using PHP for robust backend functionality" },
+      { title: "Styled with CSS to achieve a responsive and modern design" },
+      { title: "Enhanced interactivity with HTML and JavaScript integration" },
     ],
+
     link: "https://youtu.be/Z7I5uSRHMHg",
     image: Mockup.PetClinic,
   },
@@ -120,10 +158,18 @@ const portfolioProjects = [
     year: "2022",
     title: "Vloggers TV",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      {
+        title: "Built the frontend with Angular for a dynamic user experience",
+      },
+      {
+        title:
+          "Styled using SCSS and Tailwind for a cohesive, responsive design",
+      },
+      {
+        title: "Collaborated on UI/UX design in Figma to ensure visual appeal",
+      },
     ],
+
     link: "https://youtu.be/4k7IdSLxh6w",
     image: Mockup.Vloggers,
   },
@@ -132,22 +178,40 @@ const portfolioProjects = [
     year: "2022",
     title: "Maya CLI",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      {
+        title: "Developed the frontend using Angular for a dynamic application",
+      },
+      {
+        title:
+          "Styled with SCSS and Tailwind to ensure a modern, responsive UI",
+      },
+      {
+        title:
+          "Led design efforts in Figma for a cohesive and appealing interface",
+      },
     ],
     link: "https://youtu.be/7hi5zwO75yc",
     image: Mockup.MayaCli,
   },
   {
     company: "Freelance",
-    year: "202",
+    year: "2022",
     title: "Yahu",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      {
+        title:
+          "Implemented the frontend with Angular for dynamic functionality",
+      },
+      {
+        title:
+          "Styled the application using SCSS and Tailwind for responsiveness",
+      },
+      {
+        title:
+          "Contributed to design with Figma for a cohesive and modern interface",
+      },
     ],
+
     link: "https://youtu.be/Z7I5uSRHMHg",
     image: Mockup.Yahu,
   },
@@ -156,9 +220,11 @@ const portfolioProjects = [
     year: "2022",
     title: "Promdi Farm",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      {
+        title: "Built the frontend using Angular for a dynamic web experience",
+      },
+      { title: "Styled the application with SCSS for a customizable design" },
+      { title: "Added design elements and logic to ensure responsiveness" },
     ],
     link: "https://youtu.be/4k7IdSLxh6w",
     image: Mockup.PromdiFarm,
@@ -168,9 +234,17 @@ const portfolioProjects = [
     year: "2022",
     title: "Basics of HTML",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      {
+        title: "Developed using HTML and CSS to teach foundational web skills",
+      },
+      {
+        title:
+          "Styled the application to create a responsive, user-friendly design",
+      },
+      {
+        title:
+          "Enhanced functionality with design elements and interactive logic",
+      },
     ],
     link: "https://youtu.be/7hi5zwO75yc",
     image: Mockup.BasicsOfHtml,
@@ -180,50 +254,84 @@ const portfolioProjects = [
     year: "2022",
     title: "TUP Website",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      {
+        title:
+          "Built my first website using HTML and CSS for structure and style",
+      },
+      {
+        title:
+          "Developed a well-organized layout with visually appealing design",
+      },
+      {
+        title:
+          "Enhanced the site with carefully implemented features and elements",
+      },
     ],
+
     link: "https://youtu.be/Z7I5uSRHMHg",
     image: Mockup.Tup,
   },
 ];
 
+const PROJECTS_PER_PAGE = 3;
+
 export function Projects() {
-  const [showAll, setShowAll] = useState(false);
-  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const [currentPage, setCurrentPage] = useState(0);
+  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
 
-  const visibleProjects = showAll
-    ? portfolioProjects
-    : portfolioProjects.slice(0, 3);
+  const totalPageCount = Math.ceil(
+    portfolioProjects.length / PROJECTS_PER_PAGE,
+  );
 
-  const handleViewMore = () => {
-    setShowAll(true);
-  };
+  const startIndex = currentPage * PROJECTS_PER_PAGE;
+  const visibleProjects = portfolioProjects.slice(
+    startIndex,
+    startIndex + PROJECTS_PER_PAGE,
+  );
 
-  const handleUndo = () => {
-    setShowAll(false);
-    if (sectionRef.current) {
-      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+  const resetAutoPlay = () => {
+    if (autoPlayRef.current) {
+      clearInterval(autoPlayRef.current);
     }
+    autoPlayRef.current = setInterval(() => {
+      setCurrentPage((prevPage) => (prevPage + 1) % totalPageCount);
+    }, 10000);
   };
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => (prevPage + 1) % totalPageCount);
+    resetAutoPlay();
+  };
+
+  const handlePreviousPage = () => {
+    setCurrentPage(
+      (prevPage) => (prevPage - 1 + totalPageCount) % totalPageCount,
+    );
+    resetAutoPlay();
+  };
+
+  useEffect(() => {
+    resetAutoPlay();
+    return () => {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
+      }
+    };
+  }, []);
 
   return (
-    <div ref={sectionRef} className="pb-16 lg:py-24">
+    <div className="pb-16 lg:py-24">
       <div className="container">
         <SectionHeader
-          eyebrow="Real-world Results"
+          eyebrow="2 Years Of Freelance Results"
           title="Featured Projects"
-          description="See how I transformed concepts into engaging digital experiences."
+          description="Discover the creative solutions I've crafted to bring ideas to life."
         />
-        <div className="flex flex-col mt-10 gap-20 md:mt-20">
-          {visibleProjects.map((project, index) => (
+        <div className="flex flex-col mt-10 gap-10 md:mt-20">
+          {visibleProjects.map((project) => (
             <Card
               key={project.title}
-              className="px-8 pb-0 md:px-10 pt-8 md:pt-12 lg:pt-16 lg:px-20 sticky group"
-              style={{
-                top: `calc(64px + ${index * 40}px)`,
-              }}
+              className="px-8 pb-0 md:px-10 sm:mx-6 mx-0 pt-8 md:pt-12 lg:pt-16 lg:px-20 group"
             >
               <div className="lg:grid lg:grid-cols-2">
                 <div className="lg:pb-16">
@@ -254,7 +362,7 @@ export function Projects() {
                     </button>
                   </a>
                 </div>
-                <div className="relative lg:group-hover:scale-[1.075] group-hover:scale-105 md:-mb-[6.25rem] -mb-12 duration-700 ease-in-out">
+                <div className="relative group-hover:scale-105 md:-mb-[6.25rem] -mb-12 duration-700 ease-in-out">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -265,29 +373,24 @@ export function Projects() {
             </Card>
           ))}
         </div>
-        {!showAll ? (
-          <div className="flex items-center justify-center">
-            <button
-              onClick={handleViewMore}
-              className="bg-primary-default text-light-default h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-6"
-            >
-              <span className="tracking-widest text-xl font-semibold bg-gradient-to-r from-success-secondary to-info-default text-center text-transparent bg-clip-text hover:scale-110 duration-300 ease-in-out">
-                View More
-              </span>
-            </button>
-          </div>
-        ) : (
-          <div className="flex items-center justify-center">
-            <button
-              onClick={handleUndo}
-              className="bg-secondary-default text-light-default h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-6"
-            >
-              <span className="tracking-widest text-xl font-semibold bg-gradient-to-r from-success-secondary to-info-default text-center text-transparent bg-clip-text hover:scale-110 duration-300 ease-in-out">
-                Show Less
-              </span>
-            </button>
-          </div>
-        )}
+        <div className="flex items-center justify-between gap-4 mt-8 font-serif">
+          <button
+            onClick={handlePreviousPage}
+            className="bg-secondary-default text-light-default h-12 w-full rounded-xl font-semibold inline-flex items-center justify-start gap-2 md:w-auto px-6"
+          >
+            <p className="tracking-widest lg:text-3xl md:text-2xl text-lg font-semibold bg-gradient-to-r from-success-secondary to-info-default text-start text-transparent bg-clip-text hover:scale-110 duration-300 ease-in-out">
+              Previous
+            </p>
+          </button>
+          <button
+            onClick={handleNextPage}
+            className="bg-primary-default text-light-default h-12 w-full rounded-xl font-semibold inline-flex items-center justify-end gap-2 md:w-auto px-6"
+          >
+            <p className="tracking-widest lg:text-3xl md:text-2xl text-lg font-semibold bg-gradient-to-r from-success-secondary to-info-default text-end text-transparent bg-clip-text hover:scale-110 duration-300 ease-in-out">
+              Next
+            </p>
+          </button>
+        </div>
       </div>
     </div>
   );
