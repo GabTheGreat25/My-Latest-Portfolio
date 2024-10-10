@@ -2,12 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import {
-  MemojiComputer,
-  Grain,
-  BlobSunglasses,
-  MonaCat,
-} from "@/assets/images";
+import { MemojiComputer, Grain, BlobSunglasses } from "@/assets/images";
 import * as Icon from "@/assets/icons";
 import { Resume } from "@/assets/files";
 import { HeroOrbit, TechIcons } from "@/components";
@@ -76,6 +71,7 @@ export function Hero() {
                 href="https://github.com/GabTheGreat25"
                 target="_blank"
                 rel="noreferrer"
+                className="hero__hover"
               >
                 <TechIcons component={Icon.Github} size={"size-16"} />
               </a>
@@ -85,6 +81,7 @@ export function Hero() {
                 href="https://www.chess.com/member/gaabsyy5"
                 target="_blank"
                 rel="noreferrer"
+                className="hero__hover"
               >
                 <TechIcons component={Icon.Chess} size={"size-16"} />
               </a>
@@ -94,6 +91,7 @@ export function Hero() {
                 href="https://codepen.io/gabthegreat25"
                 target="_blank"
                 rel="noreferrer"
+                className="hero__hover"
               >
                 <TechIcons component={Icon.Codepen} size={"size-16"} />
               </a>
@@ -103,6 +101,7 @@ export function Hero() {
                 href="https://medium.com/@gabrielarafolmendoza25"
                 target="_blank"
                 rel="noreferrer"
+                className="hero__hover"
               >
                 <TechIcons component={Icon.Medium} size={"size-20"} />
               </a>
@@ -112,6 +111,7 @@ export function Hero() {
                 href="https://www.facebook.com/Codeeee_is_Lifeeee"
                 target="_blank"
                 rel="noreferrer"
+                className="hero__hover"
               >
                 <TechIcons component={Icon.Facebook} size={"size-16"} />
               </a>
@@ -121,6 +121,7 @@ export function Hero() {
                 href="https://stackoverflow.com/users/19642389/gabthegreat"
                 target="_blank"
                 rel="noreferrer"
+                className="hero__hover"
               >
                 <TechIcons component={Icon.Stackoverflow} size={"size-16"} />
               </a>
@@ -130,6 +131,7 @@ export function Hero() {
                 href="https://dev.to/gabthegreat25"
                 target="_blank"
                 rel="noreferrer"
+                className="hero__hover"
               >
                 <TechIcons component={Icon.DevTo} size={"size-16"} />
               </a>
@@ -139,6 +141,7 @@ export function Hero() {
                 href="https://discord.com/users/433106513280892928"
                 target="_blank"
                 rel="noreferrer"
+                className="hero__hover"
               >
                 <TechIcons component={Icon.Discord} size={"size-16"} />
               </a>
@@ -148,6 +151,7 @@ export function Hero() {
                 href="https://open.spotify.com/user/31qvjsvrsasz3ywlhwvbuqpnjzvy"
                 target="_blank"
                 rel="noreferrer"
+                className="hero__hover"
               >
                 <TechIcons component={Icon.Spotify} size={"size-16"} />
               </a>
@@ -157,6 +161,7 @@ export function Hero() {
                 href="https://www.linkedin.com/in/gaabsyy25"
                 target="_blank"
                 rel="noreferrer"
+                className="hero__hover"
               >
                 <TechIcons component={Icon.LinkedIn} size={"size-16"} />
               </a>
@@ -166,6 +171,7 @@ export function Hero() {
                 href="https://t.me/Gabz092501"
                 target="_blank"
                 rel="noreferrer"
+                className="hero__hover"
               >
                 <TechIcons component={Icon.Telegram} size={"size-16"} />
               </a>
@@ -175,6 +181,7 @@ export function Hero() {
                 href="https://www.figma.com/@gabrielmendoza"
                 target="_blank"
                 rel="noreferrer"
+                className="hero__hover"
               >
                 <TechIcons component={Icon.Figma} size={"size-16"} />
               </a>
@@ -184,6 +191,7 @@ export function Hero() {
                 href="https://codesandbox.io/u/gabthegreat25"
                 target="_blank"
                 rel="noreferrer"
+                className="hero__hover"
               >
                 <TechIcons component={Icon.CodeSandbox} size={"size-16"} />
               </a>
@@ -193,6 +201,7 @@ export function Hero() {
                 href="https://twitter.com/Gaabsyy25"
                 target="_blank"
                 rel="noreferrer"
+                className="hero__hover"
               >
                 <TechIcons component={Icon.XTwitter} size={"size-16"} />
               </a>
@@ -202,6 +211,7 @@ export function Hero() {
                 href="https://www.instagram.com/gabthegreat25"
                 target="_blank"
                 rel="noreferrer"
+                className="hero__hover"
               >
                 <TechIcons component={Icon.Instagram} size={"size-16"} />
               </a>
@@ -260,6 +270,16 @@ export function Hero() {
               <Icon.Star className="size-12 text-success-secondary" />
             </HeroOrbit>
             <HeroOrbit
+              size={585}
+              rotation={-130}
+              shouldOrbit
+              orbitDuration="39s"
+              shouldSpin
+              spinDuration="7s"
+            >
+              <Icon.Star className="size-12 text-success-secondary" />
+            </HeroOrbit>
+            <HeroOrbit
               size={590}
               rotation={98}
               shouldOrbit
@@ -269,7 +289,25 @@ export function Hero() {
             >
               <Icon.Star className="size-8 text-success-secondary" />
             </HeroOrbit>
+            <HeroOrbit
+              size={525}
+              rotation={-58}
+              shouldOrbit
+              orbitDuration="42s"
+              shouldSpin
+              spinDuration="7s"
+            >
+              <Icon.Star className="size-8 text-success-secondary" />
+            </HeroOrbit>
             <HeroOrbit size={650} rotation={-5} shouldOrbit orbitDuration="42s">
+              <div className="size-2 bg-success-secondary/20 rounded-full"></div>
+            </HeroOrbit>
+            <HeroOrbit
+              size={415}
+              rotation={-50}
+              shouldOrbit
+              orbitDuration="42s"
+            >
               <div className="size-2 bg-success-secondary/20 rounded-full"></div>
             </HeroOrbit>
             <HeroOrbit
@@ -282,6 +320,16 @@ export function Hero() {
             >
               <Icon.Sparkle className="size-14 text-success-secondary/20" />
             </HeroOrbit>
+            <HeroOrbit
+              size={850}
+              rotation={-25}
+              shouldOrbit
+              orbitDuration="46s"
+              shouldSpin
+              spinDuration="4s"
+            >
+              <Icon.Sparkle className="size-20 text-success-secondary/20" />
+            </HeroOrbit>
             <HeroOrbit size={720} rotation={85} shouldOrbit orbitDuration="46s">
               <div className="size-3 bg-success-secondary/20 rounded-full"></div>
             </HeroOrbit>
@@ -292,6 +340,16 @@ export function Hero() {
               orbitDuration="48s"
               shouldSpin
               spinDuration="6s"
+            >
+              <Icon.Star className="size-28 text-success-secondary" />
+            </HeroOrbit>
+            <HeroOrbit
+              size={900}
+              rotation={120}
+              shouldOrbit
+              orbitDuration="50s"
+              shouldSpin
+              spinDuration="7s"
             >
               <Icon.Star className="size-28 text-success-secondary" />
             </HeroOrbit>
@@ -314,7 +372,7 @@ export function Hero() {
             </div>
           </div>
           <div className="max-w-lg mx-auto">
-            <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 sm:mx-4 mx-0 tracking-wide">
+            <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 mx-6 md:mx-0 tracking-wide">
               I&rsquo;m{" "}
               <span className="tracking-widest bg-gradient-to-r from-success-secondary to-info-default text-center text-transparent bg-clip-text animate-shine shadow-lg glow">
                 Gabriel
@@ -369,7 +427,7 @@ export function Hero() {
               </a>
               <button
                 onClick={handleConnectClick}
-                className="inline-flex items-center gap-2 border border-light-default bg-light-default text-dark-default h-12 px-6 rounded-xl z-50 hover:bg-gradient-to-r from-success-secondary/60 to-info-default/60 hover:border-transparent pointer-events-none duration-300 ease-in-out"
+                className="hidden md:inline-flex items-center gap-2 border border-light-default bg-light-default text-dark-default h-12 px-6 rounded-xl z-50 hover:bg-gradient-to-r from-success-secondary/60 to-info-default/60 hover:border-transparent pointer-events-none duration-300 ease-in-out "
               >
                 <div className="hover:scale-105 duration-300 ease-in-out pointer-events-auto">
                   {showTransformed ? (
