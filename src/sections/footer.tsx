@@ -32,9 +32,9 @@ export function Footer({
 
   return (
     <footer className="relative z-10 overflow-x-clip">
-      <div className="absolute h-[400px] w-[1600px] bottom-0 left-1/2 -translate-x-1/2 bg-success-secondary/30 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10"></div>
+      <div className="absolute lg:h-[400px] md:h-[325px] h-[300px] w-[1600px] bottom-0 left-1/2 -translate-x-1/2 bg-success-secondary/30 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10"></div>
       <div className="container">
-        <div className="flex items-end justify-center pb-6">
+        <div className="flex items-end justify-center md:mb-12 mb-6">
           <a href="#home" onClick={() => handleLinkClick("#home")}>
             <div className="p-4 duration-300 ease-in rounded-full bg-gradient-to-r from-success-secondary to-info-default shadow-lg cursor-pointer hover:scale-110">
               <DoubleArrowUp className="size-10" />
