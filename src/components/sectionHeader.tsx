@@ -12,14 +12,14 @@ export function SectionHeader({
   return (
     <React.Fragment>
       <div className="flex justify-center">
-        <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-success-secondary to-info-default text-center text-transparent bg-clip-text">
+        <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-success-secondary to-info-default text-center text-transparent bg-clip-text mx-2">
           {eyebrow}
         </p>
       </div>
-      <h2 className="font-serif text-3xl md:text-5xl text-center mt-6">
+      <h2 className="font-serif text-3xl md:text-5xl text-center mt-6 mx-4">
         {title}
       </h2>
-      <p className="text-center md:text-lg lg:text-xl max-w-md mx-auto text-light-default/60 mt-4">
+      <p className="text-center md:text-lg lg:text-xl max-w-md mx-auto text-light-default/60 m-4">
         {description}
       </p>
     </React.Fragment>

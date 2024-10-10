@@ -56,6 +56,12 @@ const config: Config = {
         },
       },
       scrollbar: {
+        thin: {
+          size: ".4rem",
+          track: { background: "white" },
+          thumb: { background: "darkgray" },
+          hover: { background: "gray" },
+        },
         primary: {
           size: ".75rem",
           track: {
