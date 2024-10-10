@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import * as Mockup from "@/assets/images";
 import { CheckCircle, ArrowUpRight } from "@/assets/icons";
@@ -20,7 +20,8 @@ const portfolioProjects = [
       },
       { title: "Integrated databases with MongoDB, PostgreSQL, MySQL" },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
+    link: "https://github.com/GabTheGreat25/OwnProjects",
+    linkTitle: "Visit Source Code",
     image: Mockup.OwnProjects,
   },
   {
@@ -41,7 +42,8 @@ const portfolioProjects = [
           "Managed state and data fetching with Redux Toolkit and RTK Query",
       },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
+    link: "https://github.com/GabTheGreat25/E-Learning-Freelance-Frontend",
+    linkTitle: "Visit Source Code",
     image: Mockup.ELearning,
   },
   {
@@ -59,7 +61,8 @@ const portfolioProjects = [
           "Utilized Postman for testing and applied RBAC using MongoDB discriminators",
       },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
+    link: "https://github.com/GabTheGreat25/Quick-Formsl-Freelance-Backend",
+    linkTitle: "Visit Source Code",
     image: Mockup.QuickForms,
   },
   {
@@ -77,7 +80,8 @@ const portfolioProjects = [
       },
       { title: "UI powered by Tailwind CSS, hosted on Render and Vercel" },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
+    link: "https://www.lhanlee-salon.com",
+    linkTitle: "Visit Live Site",
     image: Mockup.LhanleeSalon,
   },
   {
@@ -96,7 +100,8 @@ const portfolioProjects = [
       { title: "Backend hosted on Render, frontend deployed via Vercel" },
     ],
 
-    link: "https://youtu.be/7hi5zwO75yc",
+    link: "https://camera-rental-fe.vercel.app",
+    linkTitle: "Visit Live Site",
     image: Mockup.CameraRental,
   },
   {
@@ -111,7 +116,8 @@ const portfolioProjects = [
       { title: "Tailwind and SCSS enabled a modern, responsive design" },
       { title: "Deployed the application using GitHub Pages for easy access" },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
+    link: "https://gabthegreat25.github.io/Final-Project-ITOS322-T",
+    linkTitle: "Visit Live Site",
     image: Mockup.VloggersTv,
   },
   {
@@ -123,8 +129,8 @@ const portfolioProjects = [
       { title: "Collaborated on UI/UX design with Figma for a cohesive look" },
       { title: "Gained hands-on experience in a hackathon team environment" },
     ],
-
-    link: "https://youtu.be/4k7IdSLxh6w",
+    link: "https://www.figma.com/design/GuV6hEJOj63s1QcWl8GWZr/crypto-8?node-id=0-1&t=RBekDImdGqaM1r6P-0",
+    linkTitle: "Visit Figma Design",
     image: Mockup.Baucha,
   },
   {
@@ -137,7 +143,8 @@ const portfolioProjects = [
       { title: "Enhanced interactivity using JavaScript for dynamic features" },
     ],
 
-    link: "https://youtu.be/7hi5zwO75yc",
+    link: "https://github.com/GabTheGreat25/Laravel-Pet-Care",
+    linkTitle: "Visit Source Code",
     image: Mockup.PetCare,
   },
   {
@@ -150,7 +157,8 @@ const portfolioProjects = [
       { title: "Enhanced interactivity with HTML and JavaScript integration" },
     ],
 
-    link: "https://youtu.be/Z7I5uSRHMHg",
+    link: "https://github.com/GabTheGreat25/php_pet_clinic",
+    linkTitle: "Visit Source Code",
     image: Mockup.PetClinic,
   },
   {
@@ -170,7 +178,8 @@ const portfolioProjects = [
       },
     ],
 
-    link: "https://youtu.be/4k7IdSLxh6w",
+    link: "https://github.com/GabTheGreat25/VloggersTV",
+    linkTitle: "Visit Source Code",
     image: Mockup.Vloggers,
   },
   {
@@ -190,7 +199,8 @@ const portfolioProjects = [
           "Led design efforts in Figma for a cohesive and appealing interface",
       },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
+    link: "https://github.com/GabTheGreat25/cli",
+    linkTitle: "Visit Source Code",
     image: Mockup.MayaCli,
   },
   {
@@ -211,8 +221,8 @@ const portfolioProjects = [
           "Contributed to design with Figma for a cohesive and modern interface",
       },
     ],
-
-    link: "https://youtu.be/Z7I5uSRHMHg",
+    link: "https://github.com/GabTheGreat25/yahu-rider-web",
+    linkTitle: "Visit Source Code",
     image: Mockup.Yahu,
   },
   {
@@ -226,7 +236,8 @@ const portfolioProjects = [
       { title: "Styled the application with SCSS for a customizable design" },
       { title: "Added design elements and logic to ensure responsiveness" },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
+    link: "https://github.com/GabTheGreat25/prodifarm-web",
+    linkTitle: "Visit Source Code",
     image: Mockup.PromdiFarm,
   },
   {
@@ -246,7 +257,8 @@ const portfolioProjects = [
           "Enhanced functionality with design elements and interactive logic",
       },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
+    link: "https://gabthegreat25.github.io/Everything-You-Need-To-Know-About-HTML5",
+    linkTitle: "Visit Live Site",
     image: Mockup.BasicsOfHtml,
   },
   {
@@ -267,8 +279,8 @@ const portfolioProjects = [
           "Enhanced the site with carefully implemented features and elements",
       },
     ],
-
-    link: "https://youtu.be/Z7I5uSRHMHg",
+    link: "https://gabthegreat25.github.io/First_Website/index.html",
+    linkTitle: "Visit Live Site",
     image: Mockup.Tup,
   },
 ];
@@ -276,8 +288,9 @@ const portfolioProjects = [
 const PROJECTS_PER_PAGE = 3;
 
 export function Projects() {
-  const [currentPage, setCurrentPage] = useState(0);
-  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
+  const [hoveredButton, setHoveredButton] = React.useState<string | null>(null);
+  const [currentPage, setCurrentPage] = React.useState(0);
+  const autoPlayRef = React.useRef<NodeJS.Timeout | null>(null);
 
   const totalPageCount = Math.ceil(
     portfolioProjects.length / PROJECTS_PER_PAGE,
@@ -295,7 +308,7 @@ export function Projects() {
     }
     autoPlayRef.current = setInterval(() => {
       setCurrentPage((prevPage) => (prevPage + 1) % totalPageCount);
-    }, 10000);
+    }, 30000);
   };
 
   const handleNextPage = () => {
@@ -310,7 +323,7 @@ export function Projects() {
     resetAutoPlay();
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     resetAutoPlay();
     return () => {
       if (autoPlayRef.current) {
@@ -348,17 +361,29 @@ export function Projects() {
                     {project.results.map((result) => (
                       <li
                         key={result.title}
-                        className="flex gap-2 text-sm md:text-base text-light-default/50"
+                        className="flex items-center gap-4 text-sm md:text-base text-light-default/50"
                       >
-                        <CheckCircle className="size-5 md:size-6" />
-                        <span>{result.title}</span>
+                        <CheckCircle className="size-6 flex-shrink-0" />
+                        <span className="flex-1">{result.title}</span>
                       </li>
                     ))}
                   </ul>
-                  <a href={project.link}>
-                    <button className="bg-light-default text-dark-tertiary h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-6">
-                      <span>Visit Live Site</span>
-                      <ArrowUpRight className="size-4" />
+                  <a
+                    href={project.link}
+                    onMouseEnter={() => setHoveredButton(project.title)}
+                    onMouseLeave={() => setHoveredButton(null)}
+                  >
+                    <button className="bg-light-default text-dark-tertiary h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-6 hover:bg-gradient-to-r from-success-secondary/60 to-info-default/60 hover:border-transparent duration-300 ease-in-out pointer-events-none">
+                      <span className="inline-flex items-center gap-2 hover:scale-105 duration-300 ease-in-out pointer-events-auto">
+                        <span>{project.linkTitle}</span>
+                        <ArrowUpRight
+                          className={`size-4 transition-transform duration-500 ${
+                            hoveredButton === project.title
+                              ? "rotate-[225deg]"
+                              : "rotate-0"
+                          }`}
+                        />
+                      </span>
                     </button>
                   </a>
                 </div>

@@ -427,7 +427,7 @@ export function Hero() {
               </a>
               <button
                 onClick={handleConnectClick}
-                className="hidden md:inline-flex items-center gap-2 border border-light-default bg-light-default text-dark-default h-12 px-6 rounded-xl z-50 hover:bg-gradient-to-r from-success-secondary/60 to-info-default/60 hover:border-transparent pointer-events-none duration-300 ease-in-out "
+                className="hidden md:inline-flex items-center gap-2 border border-light-default bg-light-default text-dark-default h-12 px-6 rounded-xl z-50 hover:bg-gradient-to-r from-success-secondary/60 to-info-default/60 hover:border-transparent pointer-events-none duration-300 ease-in-out"
               >
                 <div className="hover:scale-105 duration-300 ease-in-out pointer-events-auto">
                   {showTransformed ? (
