@@ -28,11 +28,12 @@ export default function Home() {
       <section id="projects">
         <Projects />
       </section>
-      <Tape />
+      <Tape className="-rotate-3" animateClassName="animate-move-left" />
       <Testimonials />
       <section id="about">
         <About />
       </section>
+      <Tape className="rotate-3" animateClassName="animate-move-right" />
       <section id="contact">
         <Contact />
       </section>

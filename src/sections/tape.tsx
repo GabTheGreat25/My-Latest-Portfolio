@@ -1,29 +1,66 @@
 "use client";
 
 import React from "react";
+import { twMerge } from "tailwind-merge";
 import { Star } from "@/assets/icons";
 
 const words = [
-  "Performant",
-  "Accessible",
-  "Secure",
-  "Interactive",
+  "Innovative",
+  "Efficient",
+  "Dynamic",
+  "Collaborative",
+  "Versatile",
   "Scalable",
-  "User Friendly",
+  "Optimized",
   "Responsive",
-  "Maintainable",
-  "Search Optimized",
-  "Usable",
+  "Creative",
+  "Modern",
+  "Adaptable",
+  "Cutting-edge",
+  "Strategic",
+  "Impactful",
+  "Structured",
+  "Agile",
+  "Seamless",
+  "User-focused",
+  "Progressive",
+  "Intuitive",
+  "Robust",
+  "Detailed",
   "Reliable",
+  "Driven",
+  "Passionate",
+  "Technological",
+  "Focused",
+  "Resourceful",
+  "Original",
+  "Ambitious",
+  "Sustainable",
 ];
 
-export function Tape() {
+export function Tape({
+  className,
+  animateClassName,
+}: {
+  className?: string;
+  animateClassName?: string;
+}) {
   return (
     <section className="py-16 lg:py-24 overflow-x-clip">
-      <div className="bg-gradient-to-r from-success-secondary to-info-default -rotate-3 -mx-1">
+      <div
+        className={twMerge(
+          "bg-gradient-to-r from-success-secondary to-info-default -mx-1",
+          className,
+        )}
+      >
         <div className="flex [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-          <div className="flex flex-none gap-4 pr-4 py-3 animate animate-move-left [animation-duration:60s]">
-            {[...new Array(5)].fill(0).map((_, index) => (
+          <div
+            className={twMerge(
+              "flex flex-none gap-4 pr-4 py-3 [animation-duration:60s]",
+              animateClassName,
+            )}
+          >
+            {[...new Array(2)].fill(0).map((_, index) => (
               <React.Fragment key={index}>
                 {words.map((word) => (
                   <div key={word} className="inline-flex gap-4 items-center">
