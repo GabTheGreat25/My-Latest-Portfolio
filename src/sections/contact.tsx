@@ -78,11 +78,12 @@ export function Contact() {
                   Full Stack Developer
                 </p>
                 <p className="mt-4 md:text-base text-sm text-justify">
-                  Ready to bring your project to life? Let&#39;s connect! With
-                  my full-stack development experience and passion for
-                  innovative solutions, I deliver high-quality results tailored
-                  to your needs. Whether you&#39;re building a new application
-                  or enhancing an existing one, I&#39;m here to help.
+                  Let&#39;s make your project a reality together! With extensive
+                  experience in full-stack development and a commitment to
+                  creating innovative solutions, I deliver results that fit your
+                  specific needs. Whether you're launching a new app or
+                  upgrading an existing one, I&#39;m ready to assist you every
+                  step of the way.
                 </p>
               </div>
             </Card>
