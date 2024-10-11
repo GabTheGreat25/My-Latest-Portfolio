@@ -34,6 +34,13 @@ export function Header({
           About
         </a>
         <a
+          className={`nav__link ${activeLink === "#faq" ? "bg-light-default text-dark-default" : ""}`}
+          href="#faq"
+          onClick={() => handleLinkClick("#faq")}
+        >
+          FAQ
+        </a>
+        <a
           className={`nav__link ${activeLink === "#contact" ? "bg-light-default text-dark-default" : ""}`}
           href="#contact"
           onClick={() => handleLinkClick("#contact")}

@@ -344,7 +344,7 @@ export function Projects() {
           {visibleProjects.map((project, index) => (
             <Card
               key={project.title}
-              className="px-8 pb-0 md:px-10 sm:mx-6 mx-0 pt-8 md:pt-12 lg:pt-16 lg:px-20 group lg:h-[30rem] md:h-[40rem] h-[31rem] sticky"
+              className="px-8 pb-0 md:px-10 mx-6 md:mx-0 pt-8 md:pt-12 lg:pt-16 lg:px-20 group lg:h-[30rem] md:h-[40rem] h-[31rem] sticky"
               style={{
                 top: `calc(100px + ${index * 30}px)`,
               }}

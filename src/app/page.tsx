@@ -10,6 +10,7 @@ import {
   About,
   Contact,
   Footer,
+  Faq,
 } from "@/sections";
 
 export default function Home() {
@@ -34,6 +35,9 @@ export default function Home() {
         <About />
       </section>
       <Tape className="rotate-3" animateClassName="animate-move-right" />
+      <section id="faq">
+        <Faq />
+      </section>
       <section id="contact">
         <Contact />
       </section>

@@ -320,11 +320,11 @@ export function About() {
                   isHovered={isHovered}
                 />
                 <div className="md:w-64 w-[17.5rem] mx-auto mt-2 md:mt-0 relative group pointer-events-none">
-                  <div className="absolute rounded-full h-[450px] w-[600px] bottom-0 left-1/2 -translate-x-1/2 bg-success-secondary/70 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10 transition-all duration-500 ease-in-out sm:group-hover:h-[515px] md:group-hover:h-[535px] group-hover:w-[700px] group-hover:bg-success-secondary/85"></div>
+                  <div className="absolute rounded-full h-[450px] w-[600px] bottom-0 left-1/2 -translate-x-1/2 bg-success-secondary/70 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10 transition-all duration-500 ease-in-out group-hover:h-[515px] md:group-hover:h-[535px] group-hover:w-[700px] group-hover:bg-success-secondary/85"></div>
                   <Image
                     src={Music}
                     alt="Music"
-                    className="sm:hover:-translate-y-1 hover:translate-y-3 transition-transform duration-500 ease-in-out md:hover:scale-[1.175] hover:scale-110 relative z-10 pointer-events-auto cursor-pointer"
+                    className="hover:-translate-y-1 md:hover:translate-y-3 transition-transform duration-500 ease-in-out md:hover:scale-[1.175] hover:scale-110 relative z-10 pointer-events-auto cursor-pointer"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                   />

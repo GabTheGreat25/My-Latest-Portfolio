@@ -41,7 +41,7 @@ export function Footer({
             </div>
           </a>
         </div>
-        <div className="border-t border-light-default/15 sm:pb-6 pb-0 text-sm flex flex-col md:flex-row md:justify-between items-center gap-x-8">
+        <div className="border-t border-light-default/15 pb-6 md:pb-0 text-sm flex flex-col md:flex-row md:justify-between items-center gap-x-8">
           <div className="inline-flex items-center text-light-default">
             <Image src="/logo.png" alt="logo" width="100" height="100" />
             <span>&copy; 2024. All rights reserved.</span>
