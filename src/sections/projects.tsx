@@ -341,10 +341,13 @@ export function Projects() {
           description="Discover the creative solutions I've crafted to bring ideas to life."
         />
         <div className="flex flex-col mt-10 gap-10 md:mt-20">
-          {visibleProjects.map((project) => (
+          {visibleProjects.map((project, index) => (
             <Card
               key={project.title}
-              className="px-8 pb-0 md:px-10 sm:mx-6 mx-0 pt-8 md:pt-12 lg:pt-16 lg:px-20 group lg:h-[30rem] md:h-[40rem] h-[31rem]"
+              className="px-8 pb-0 md:px-10 sm:mx-6 mx-0 pt-8 md:pt-12 lg:pt-16 lg:px-20 group lg:h-[30rem] md:h-[40rem] h-[31rem] sticky"
+              style={{
+                top: `calc(100px + ${index * 30}px)`,
+              }}
             >
               <div className="lg:grid lg:grid-cols-2">
                 <div className="lg:pb-16">
