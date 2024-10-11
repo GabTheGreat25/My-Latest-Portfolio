@@ -3,7 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionHeader, Card, CardHeader, ToolboxItems } from "@/components";
 import * as Icon from "@/assets/icons";
-import { Music, Map, MemojiSmile } from "@/assets/images";
+import { Music, Map, MemojiSmile, GabShades, MonaCat } from "@/assets/images";
 
 const toolBoxItems1 = [
   {
@@ -310,6 +310,47 @@ export function About() {
           title="A Glimpse Into My World"
           description="Learn more about who I am, what I do, and what inspires me."
         />
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-x-10 items-center xs:mx-2 sm:mx-0">
+          <div className="relative">
+            <div className="hover:scale-105 duration-500 ease-in-out bg-light-default border-2 border-light-default/60 rounded-lg p-2 transform md:rotate-6 rotate-3">
+              <Image src={GabShades} alt="GabShades" className="rounded-lg" />
+            </div>
+          </div>
+          <div>
+            <p className="text-lg pt-10 text-justify sm:text-base">
+              Experienced Full Stack Developer with 2 years of diverse
+              experience in freelancing, bootcamps, internships, and hackathons,
+              including being a competition finalist, specializing in crafting
+              seamless user experiences, backend development, mobile app
+              creation, and scalable solutions. Committed to continuous learning
+              and professional growth, actively engaging in tech communities,
+              volunteering, and attending industry seminars, while consistently
+              delivering high-quality, innovative results that solve complex
+              challenges.
+            </p>
+            <div>
+              <motion.div
+                animate={{
+                  x: [0, "78%", 0],
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="relative"
+              >
+                <Image
+                  src={MonaCat}
+                  alt="Mona Cat"
+                  width={100}
+                  height={100}
+                  className="hover:scale-110 duration-500 ease-in-out"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </div>
         <div className="mt-20 flex flex-col gap-8 xs:mx-2 sm:mx-0">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:grid-cols-3">
             <Card className="h-[320px] md:col-span-2 lg:col-span-1">

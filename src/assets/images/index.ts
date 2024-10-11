@@ -26,3 +26,4 @@ export { default as PromdiFarm } from "./promdi-farm.png";
 export { default as BasicsOfHtml } from "./basics-of-html.png";
 export { default as Tup } from "./tup.png";
 export { default as Gab } from "./gab.jpg";
+export { default as GabShades } from "./gab-shades.jpg";
