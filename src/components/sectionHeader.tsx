@@ -16,10 +16,10 @@ export function SectionHeader({
           {eyebrow}
         </p>
       </div>
-      <h2 className="font-serif text-3xl md:text-5xl text-center mt-6 mx-4">
+      <h2 className="font-serif text-3xl md:text-5xl text-center mt-4 md:mt-6 mx-5">
         {title}
       </h2>
-      <p className="text-center md:text-lg lg:text-xl max-w-md mx-auto text-light-default/60 m-4">
+      <p className="text-center md:text-lg lg:text-xl max-w-md md:mx-auto text-light-default/60 my-4 mx-5">
         {description}
       </p>
     </React.Fragment>

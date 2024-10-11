@@ -1,13 +1,15 @@
-"use client";
-
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionHeader, Card, CardHeader, ToolboxItems } from "@/components";
 import * as Icon from "@/assets/icons";
-import { BookCover, Map, MemojiSmile } from "@/assets/images";
+import { Music, Map, MemojiSmile } from "@/assets/images";
 
-const toolBoxItems = [
+const toolBoxItems1 = [
+  {
+    title: "VsCode",
+    iconType: Icon.VsCode,
+  },
   {
     title: "JavaScript",
     iconType: Icon.Javascript,
@@ -32,12 +34,227 @@ const toolBoxItems = [
     title: "Github",
     iconType: Icon.Github,
   },
+  {
+    title: "Typescript",
+    iconType: Icon.Typescript,
+  },
+  {
+    title: "React Native",
+    iconType: Icon.ReactNative,
+  },
+  {
+    title: "Maya",
+    iconType: Icon.Maya,
+  },
+  {
+    title: "Android Studio",
+    iconType: Icon.AndroidStudio,
+  },
+  {
+    title: "Angular",
+    iconType: Icon.Angular,
+  },
+  {
+    title: "Bootstrap",
+    iconType: Icon.Bootstrap,
+  },
+  {
+    title: "DaisyUI",
+    iconType: Icon.DaisyUi,
+  },
+  {
+    title: "Draw.Io",
+    iconType: Icon.DrawIo,
+  },
+  {
+    title: "Drizzle",
+    iconType: Icon.Drizzle,
+  },
+  {
+    title: "Env",
+    iconType: Icon.Env,
+  },
+  {
+    title: "Express",
+    iconType: Icon.Express,
+  },
+  {
+    title: "Fastify",
+    iconType: Icon.Fastify,
+  },
+  {
+    title: "Framer",
+    iconType: Icon.Framer,
+  },
+  {
+    title: "GitKraken",
+    iconType: Icon.GitKraken,
+  },
+  {
+    title: "Git",
+    iconType: Icon.Git,
+  },
+  {
+    title: "GitIgnore",
+    iconType: Icon.GitIgnore,
+  },
+  {
+    title: "Github Pages",
+    iconType: Icon.GithubPages,
+  },
+  {
+    title: "Insomnia",
+    iconType: Icon.Insomnia,
+  },
+  {
+    title: "Jest",
+    iconType: Icon.Jest,
+  },
+  {
+    title: "jQuery",
+    iconType: Icon.JQuery,
+  },
+  {
+    title: "Jwt",
+    iconType: Icon.Jwt,
+  },
+  {
+    title: "Laravel",
+    iconType: Icon.Laravel,
+  },
+  {
+    title: "MariaDB",
+    iconType: Icon.MariaDB,
+  },
+];
+
+const toolBoxItems2 = [
+  {
+    title: "MongoDB",
+    iconType: Icon.MongoDB,
+  },
+  {
+    title: "Mongoose",
+    iconType: Icon.Mongoose,
+  },
+  {
+    title: "Mui",
+    iconType: Icon.Mui,
+  },
+  {
+    title: "MySQL",
+    iconType: Icon.Mysql,
+  },
+  {
+    title: "Nest",
+    iconType: Icon.Nest,
+  },
+  {
+    title: "Next",
+    iconType: Icon.Next,
+  },
+  {
+    title: "Node",
+    iconType: Icon.Node,
+  },
+  {
+    title: "Npm",
+    iconType: Icon.Npm,
+  },
+  {
+    title: "Odoo",
+    iconType: Icon.Odoo,
+  },
+  {
+    title: "Php",
+    iconType: Icon.Php,
+  },
+  {
+    title: "PostgreSql",
+    iconType: Icon.PostgreSql,
+  },
+  {
+    title: "Postman",
+    iconType: Icon.Postman,
+  },
+  {
+    title: "Prettier",
+    iconType: Icon.Prettier,
+  },
+  {
+    title: "Prisma",
+    iconType: Icon.Prisma,
+  },
+  {
+    title: "Render",
+    iconType: Icon.Render,
+  },
+  {
+    title: "Sass",
+    iconType: Icon.Sass,
+  },
+  {
+    title: "Shadcn",
+    iconType: Icon.Shadcn,
+  },
+  {
+    title: "Tailwind",
+    iconType: Icon.Tailwind,
+  },
+  {
+    title: "Trello",
+    iconType: Icon.Trello,
+  },
+  {
+    title: "Twilio",
+    iconType: Icon.Twilio,
+  },
+  {
+    title: "TypeOrm",
+    iconType: Icon.TypeOrm,
+  },
+  {
+    title: "Vercel",
+    iconType: Icon.Vercel,
+  },
+  {
+    title: "Vue",
+    iconType: Icon.Vue,
+  },
+  {
+    title: "Wix",
+    iconType: Icon.Wix,
+  },
+  {
+    title: "WordPress",
+    iconType: Icon.Wordpress,
+  },
+  {
+    title: "Xampp",
+    iconType: Icon.Xampp,
+  },
+  {
+    title: "PostCss",
+    iconType: Icon.PostCss,
+  },
+  {
+    title: "Vite",
+    iconType: Icon.Vite,
+  },
+  {
+    title: "Cloudinary",
+    iconType: Icon.Cloudinary,
+  },
+  {
+    title: "WebPack",
+    iconType: Icon.WebPack,
+  },
 ];
 
 const hobbies = [
   {
-    title: "Painting",
-    emoji: "🎨",
+    title: "Movie",
+    emoji: "🎥",
     left: "5%",
     top: "5%",
   },
@@ -48,8 +265,8 @@ const hobbies = [
     top: "5%",
   },
   {
-    title: "Hiking",
-    emoji: "👟",
+    title: "Chess",
+    emoji: "♟️",
     left: "35%",
     top: "40%",
   },
@@ -80,6 +297,9 @@ const hobbies = [
 ];
 
 export function About() {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isToolboxHovered, setIsToolboxHovered] = useState(false);
+  const [isBeyondHovered, setIsBeyondHovered] = useState(false);
   const constraintsRef = React.useRef(null);
 
   return (
@@ -90,37 +310,54 @@ export function About() {
           title="A Glimpse Into My World"
           description="Learn more about who I am, what I do, and what inspires me."
         />
-        <div className="mt-20 flex flex-col gap-8">
+        <div className="mt-20 flex flex-col gap-8 mx-6 md:mx-0">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:grid-cols-3">
             <Card className="h-[320px] md:col-span-2 lg:col-span-1">
-              <CardHeader
-                title="My Reads"
-                description="Explore the books shaping my perspectives."
-              />
-              <div className="w-40 mx-auto mt-2 md:mt-0 relative group pointer-events-none">
-                <div className="absolute rounded-full h-[400px] w-[600px] bottom-0 left-1/2 -translate-x-1/2 bg-success-secondary/70 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10 transition-all duration-500 ease-in-out sm:group-hover:h-[500px] md:group-hover:h-[520px] group-hover:w-[700px] group-hover:bg-success-secondary/85"></div>
-                <Image
-                  src={BookCover}
-                  alt="Book Cover"
-                  className="sm:hover:-translate-y-1 hover:translate-y-3 transition-transform duration-500 ease-in-out hover:scale-110 relative z-10 pointer-events-auto"
+              <a href="https://open.spotify.com/playlist/7yau91B5VqQz1dCcGL7WLo?si=14d3f5959d0740cd">
+                <CardHeader
+                  title="My Music"
+                  description="Discover the music that inspires and shapes my journey."
+                  isHovered={isHovered}
                 />
-              </div>
+                <div className="md:w-64 w-[17.5rem] mx-auto mt-2 md:mt-0 relative group pointer-events-none">
+                  <div className="absolute rounded-full h-[450px] w-[600px] bottom-0 left-1/2 -translate-x-1/2 bg-success-secondary/70 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)] -z-10 transition-all duration-500 ease-in-out sm:group-hover:h-[515px] md:group-hover:h-[535px] group-hover:w-[700px] group-hover:bg-success-secondary/85"></div>
+                  <Image
+                    src={Music}
+                    alt="Music"
+                    className="sm:hover:-translate-y-1 hover:translate-y-3 transition-transform duration-500 ease-in-out md:hover:scale-[1.175] hover:scale-110 relative z-10 pointer-events-auto cursor-pointer"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                  />
+                </div>
+              </a>
             </Card>
             <Card className="h-[320px] md:col-span-3 lg:col-span-2">
               <CardHeader
                 title="My Toolbox"
-                description="Explore the technologies and tools I use to craft exceptional
-                digital experiences."
+                description="Explore the technologies and tools I use to craft exceptional digital experiences."
+                isHovered={isToolboxHovered}
               />
-              <ToolboxItems
-                items={toolBoxItems}
-                itemsWrapperClassName="animate-move-left [animation-duration:20s] hover:[animation-play-state:paused]"
-              />
-              <ToolboxItems
-                items={toolBoxItems}
-                className="mt-6"
-                itemsWrapperClassName="-translate-x-1/2 animate-move-right [animation-duration:20s] hover:[animation-play-state:paused]"
-              />
+              <span
+                onMouseEnter={() => setIsToolboxHovered(true)}
+                onMouseLeave={() => setIsToolboxHovered(false)}
+                className="m-0 p-0"
+              >
+                <ToolboxItems
+                  items={toolBoxItems1}
+                  itemsWrapperClassName="animate-move-left [animation-duration:120s] hover:[animation-play-state:paused]"
+                />
+              </span>
+              <span
+                onMouseEnter={() => setIsToolboxHovered(true)}
+                onMouseLeave={() => setIsToolboxHovered(false)}
+                className="m-0 p-0"
+              >
+                <ToolboxItems
+                  items={toolBoxItems2}
+                  className="mt-6"
+                  itemsWrapperClassName="-translate-x-1/2 animate-move-right [animation-duration:120s] hover:[animation-play-state:paused]"
+                />
+              </span>
             </Card>
           </div>
           <div className="grid gap-8 grid-cols-1 md:grid-cols-5 lg:grid-cols-3">
@@ -129,18 +366,23 @@ export function About() {
                 title="Beyond the Code"
                 description="Explore my interests and hobbies beyond the digital realm."
                 className="p-6"
+                isHovered={isBeyondHovered}
               />
               <div className="relative flex-1" ref={constraintsRef}>
                 {hobbies.map((hobby) => (
                   <motion.div
                     key={hobby.title}
-                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-success-secondary to-info-default rounded-full py-1.5 absolute"
+                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-success-secondary to-info-default rounded-full py-1.5 absolute cursor-pointer"
                     style={{
                       left: hobby.left,
                       top: hobby.top,
                     }}
                     drag
                     dragConstraints={constraintsRef}
+                    onHoverStart={() => setIsBeyondHovered(true)}
+                    onHoverEnd={() => setIsBeyondHovered(false)}
+                    onDragStart={() => setIsBeyondHovered(true)}
+                    onDragEnd={() => setIsBeyondHovered(false)}
                   >
                     <span className="font-medium text-dark-tertiary">
                       {hobby.title}
@@ -150,21 +392,27 @@ export function About() {
                 ))}
               </div>
             </Card>
-            <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
-              <Image
-                src={Map}
-                alt="Map"
-                className="h-full w-full object-cover object-left-top"
-              />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full  after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-dark-tertiary/30">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-success-secondary to-info-default -z-20 animate-ping [animation-duration:2s]"></div>
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-success-secondary to-info-default -z-10"></div>
+            <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1 cursor-pointer">
+              <a
+                href="https://www.google.com/maps/place/South+Signal+Village,+Taguig,+Metro+Manila/data=!4m2!3m1!1s0x3397cf3866bbb3b7:0x4ca0ad680e4a5b0d?sa=X&ved=1t:242&ictx=111"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image
-                  src={MemojiSmile}
-                  alt="Memoji Smile"
-                  className="size-20"
+                  src={Map}
+                  alt="Map"
+                  className="h-full w-full object-cover object-left-top"
                 />
-              </div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full  after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-dark-tertiary/30">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-success-secondary to-info-default -z-20 animate-ping [animation-duration:2s]"></div>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-success-secondary to-info-default -z-10"></div>
+                  <Image
+                    src={MemojiSmile}
+                    alt="Memoji Smile"
+                    className="size-20"
+                  />
+                </div>
+              </a>
             </Card>
           </div>
         </div>

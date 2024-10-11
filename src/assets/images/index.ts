@@ -1,4 +1,4 @@
-export { default as BookCover } from "./book-cover.png";
+export { default as Music } from "./music.png";
 export { default as Grain } from "./grain.jpg";
 export { default as Map } from "./map.png";
 export { default as MemojiAvatar1 } from "./memoji-avatar-1.png";
