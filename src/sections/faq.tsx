@@ -64,7 +64,7 @@ export function Faq() {
           title="Frequently Asked Questions"
           description="Find all the answers you're looking for right here."
         />
-        <div className="mt-10 grid md:gap-8 grid-cols-1 md:grid-cols-2 mx-6 md:mx-0">
+        <div className="mt-10 grid md:gap-8 grid-cols-1 md:grid-cols-2 xs:mx-2 sm:mx-0">
           <div>
             {faqItems1.map((item, index) => {
               const isOpen = expandedIndexes.includes(index);
@@ -104,7 +104,7 @@ export function Faq() {
                   onClick={() => toggleExpand(adjustedIndex)}
                 >
                   <div className="flex justify-between gap-6 items-start">
-                    <h3 className="font-semibold lg:text-lg md:text-base text-sm">
+                    <h3 className="font-semibold lg:text-lg md:text- text-sm">
                       {item.question}
                     </h3>
                     <div className="flex-shrink-0">

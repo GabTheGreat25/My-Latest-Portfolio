@@ -310,7 +310,7 @@ export function About() {
           title="A Glimpse Into My World"
           description="Learn more about who I am, what I do, and what inspires me."
         />
-        <div className="mt-20 flex flex-col gap-8 mx-6 md:mx-0">
+        <div className="mt-20 flex flex-col gap-8 xs:mx-2 sm:mx-0">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:grid-cols-3">
             <Card className="h-[320px] md:col-span-2 lg:col-span-1">
               <a href="https://open.spotify.com/playlist/7yau91B5VqQz1dCcGL7WLo?si=14d3f5959d0740cd">
@@ -372,7 +372,7 @@ export function About() {
                 {hobbies.map((hobby) => (
                   <motion.div
                     key={hobby.title}
-                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-success-secondary to-info-default rounded-full py-1.5 absolute cursor-pointer"
+                    className="inline-flex justify-center items-center gap-2 px-6 bg-gradient-to-r from-success-secondary to-info-default rounded-full py-1.5 absolute cursor-pointer"
                     style={{
                       left: hobby.left,
                       top: hobby.top,
@@ -384,10 +384,10 @@ export function About() {
                     onDragStart={() => setIsBeyondHovered(true)}
                     onDragEnd={() => setIsBeyondHovered(false)}
                   >
-                    <span className="font-medium text-dark-tertiary">
+                    <span className="font-medium text-dark-tertiary md:text-base text-xs">
                       {hobby.title}
                     </span>
-                    <span>{hobby.emoji}</span>
+                    <span className="md:text-base text-xs">{hobby.emoji}</span>
                   </motion.div>
                 ))}
               </div>

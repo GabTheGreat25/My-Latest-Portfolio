@@ -17,7 +17,7 @@ export function Contact() {
   };
 
   return (
-    <div className="pb-16 pt-12 lg:pb-24 lg:pt-20 mx-6 md:mx-4 z-0">
+    <div className="pb-16 pt-12 lg:pb-24 lg:pt-20 xs:mx-2 sm:mx-0 z-0">
       <div className="container">
         <div className="bg-gradient-to-r from-success-secondary to-info-default text-dark-variant py-8 px-10 rounded-3xl text-center md:text-left relative overflow-hidden">
           <div

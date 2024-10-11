@@ -15,7 +15,7 @@
   }
 
   .nav__link {
-    @apply text-light-default text-sm font-semibold md:px-4 px-3 py-1.5 rounded-full hover:bg-light-default/10 hover:text-light-default transition duration-300;
+    @apply text-light-default text-xs md:text-sm font-semibold md:px-4 px-2.5 py-1.5 rounded-full hover:bg-light-default/10 hover:text-light-default transition duration-300;
   }
 
   .hero__ring {

@@ -344,7 +344,7 @@ export function Projects() {
           {visibleProjects.map((project, index) => (
             <Card
               key={project.title}
-              className="px-8 pb-0 md:px-10 mx-6 md:mx-0 pt-8 md:pt-12 lg:pt-16 lg:px-20 group lg:h-[30rem] md:h-[40rem] h-[31rem] sticky"
+              className="px-8 pb-0 md:px-10 xs:mx-2 sm:mx-0 pt-8 md:pt-12 lg:pt-16 lg:px-20 group lg:h-[30rem] md:h-[40rem] h-[31rem] sticky"
               style={{
                 top: `calc(100px + ${index * 30}px)`,
               }}
@@ -377,9 +377,11 @@ export function Projects() {
                     onMouseLeave={() => setHoveredButton(null)}
                     className="flex items-center justify-center md:justify-start"
                   >
-                    <button className="bg-light-default text-dark-tertiary h-12 w-5/6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-6 hover:bg-gradient-to-r from-success-secondary/60 to-info-default/60 hover:border-transparent duration-300 ease-in-out pointer-events-none">
+                    <button className="bg-light-default text-dark-tertiary h-12 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-6 hover:bg-gradient-to-r from-success-secondary/60 to-info-default/60 hover:border-transparent duration-300 ease-in-out pointer-events-none">
                       <span className="inline-flex items-center gap-2 hover:scale-105 duration-300 ease-in-out pointer-events-auto">
-                        <span>{project.linkTitle}</span>
+                        <span className="md:text-base text-sm">
+                          {project.linkTitle}
+                        </span>
                         <ArrowUpRight
                           className={`size-4 transition-transform duration-500 ${
                             hoveredButton === project.title
