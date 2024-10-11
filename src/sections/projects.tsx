@@ -330,7 +330,7 @@ export function Projects() {
         clearInterval(autoPlayRef.current);
       }
     };
-  }, []);
+  }, [resetAutoPlay]);
 
   return (
     <div className="pb-16 lg:py-24">

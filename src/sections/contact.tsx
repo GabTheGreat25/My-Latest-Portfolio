@@ -9,7 +9,7 @@ import { Grain, Gab } from "@/assets/images";
 export function Contact() {
   const [hoveredButton, setHoveredButton] = React.useState<string | null>(null);
   const [hoveredContactButton, setHoveredContactButton] =
-    React.useState<boolean>(false); // New state for contact button
+    React.useState<boolean>(false);
   const [isFormVisible, setFormVisible] = React.useState(false);
 
   const handleContactClick = () => {
@@ -81,7 +81,7 @@ export function Contact() {
                   Let&#39;s make your project a reality together! With extensive
                   experience in full-stack development and a commitment to
                   creating innovative solutions, I deliver results that fit your
-                  specific needs. Whether you're launching a new app or
+                  specific needs. Whether you&#39;re launching a new app or
                   upgrading an existing one, I&#39;m ready to assist you every
                   step of the way.
                 </p>
