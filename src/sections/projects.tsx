@@ -344,7 +344,7 @@ export function Projects() {
           {visibleProjects.map((project) => (
             <Card
               key={project.title}
-              className="px-8 pb-0 md:px-10 sm:mx-6 mx-0 pt-8 md:pt-12 lg:pt-16 lg:px-20 group"
+              className="px-8 pb-0 md:px-10 sm:mx-6 mx-0 pt-8 md:pt-12 lg:pt-16 lg:px-20 group lg:h-[30rem] md:h-[40rem] h-[31rem]"
             >
               <div className="lg:grid lg:grid-cols-2">
                 <div className="lg:pb-16">
@@ -353,15 +353,15 @@ export function Projects() {
                     <span>&bull;</span>
                     <span>{project.year}</span>
                   </div>
-                  <h3 className="font-serif text-2xl mt-2 md:mt-5 md:text-4xl">
+                  <h3 className="font-serif text-xl mt-2 md:mt-5 md:text-4xl lg:text-3xl">
                     {project.title}
                   </h3>
-                  <hr className="border-t-2 border-light-default/5 mt-4 md:mt-5" />
+                  <hr className="border-t-2 border-light-default/5 mt-4" />
                   <ul className="flex flex-col gap-4 mt-4 md:mt-5">
                     {project.results.map((result) => (
                       <li
                         key={result.title}
-                        className="flex items-center gap-4 text-sm md:text-base text-light-default/50"
+                        className="flex items-center gap-4 text-xs md:text-base text-light-default/50"
                       >
                         <CheckCircle className="size-6 flex-shrink-0" />
                         <span className="flex-1">{result.title}</span>
@@ -372,8 +372,9 @@ export function Projects() {
                     href={project.link}
                     onMouseEnter={() => setHoveredButton(project.title)}
                     onMouseLeave={() => setHoveredButton(null)}
+                    className="flex items-center justify-center md:justify-start"
                   >
-                    <button className="bg-light-default text-dark-tertiary h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-6 hover:bg-gradient-to-r from-success-secondary/60 to-info-default/60 hover:border-transparent duration-300 ease-in-out pointer-events-none">
+                    <button className="bg-light-default text-dark-tertiary h-12 w-5/6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 md:w-auto px-6 hover:bg-gradient-to-r from-success-secondary/60 to-info-default/60 hover:border-transparent duration-300 ease-in-out pointer-events-none">
                       <span className="inline-flex items-center gap-2 hover:scale-105 duration-300 ease-in-out pointer-events-auto">
                         <span>{project.linkTitle}</span>
                         <ArrowUpRight
