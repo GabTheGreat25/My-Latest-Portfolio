@@ -14,6 +14,16 @@
     @apply min-w-full min-h-full scrollbar-primary scroll-smooth;
   }
 
+  ::selection {
+    @apply bg-transparent;
+  }
+
+  button:focus,
+  input:focus,
+  a:focus {
+    @apply outline-none;
+  }
+
   .nav__link {
     @apply text-light-default text-xs md:text-sm font-semibold md:px-4 px-2.5 py-1.5 rounded-full hover:bg-light-default/10 hover:text-light-default transition duration-300;
   }
