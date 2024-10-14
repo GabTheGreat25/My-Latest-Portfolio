@@ -71,7 +71,7 @@ export function Faq() {
               return (
                 <Card
                   key={index}
-                  className={`faq-card p-6 mb-6 cursor-pointer transition-all duration-300 ${isOpen ? "lg:h-[215px] md:h-[225px]" : "h-auto"}`}
+                  className={`faq-card p-6 mb-6 cursor-pointer transition-all duration-500 ease-in-out ${isOpen ? "lg:h-[215px] md:h-[225px]" : "h-auto"}`}
                   onClick={() => toggleExpand(index)}
                 >
                   <div className="flex justify-between gap-6 items-start">
@@ -80,15 +80,19 @@ export function Faq() {
                     </h3>
                     <div className="flex-shrink-0">
                       <ArrowUpRight
-                        className={`size-5 transition-transform duration-300 ${isOpen ? "rotate-0" : "rotate-180"}`}
+                        className={`size-5 transition-transform duration-500 ease-in-out ${isOpen ? "rotate-0" : "rotate-180"}`}
                       />
                     </div>
                   </div>
-                  {isOpen && (
-                    <p className="mt-4 lg:text-sm text-xs text-light-default/80">
-                      {item.answer}
-                    </p>
-                  )}
+                  <div
+                    className={`transition-opacity duration-500 ease-in-out ${isOpen ? "opacity-100" : "opacity-0 h-0 overflow-hidden"}`}
+                  >
+                    {isOpen && (
+                      <p className="mt-4 lg:text-sm text-xs text-light-default/80">
+                        {item.answer}
+                      </p>
+                    )}
+                  </div>
                 </Card>
               );
             })}
@@ -100,24 +104,28 @@ export function Faq() {
               return (
                 <Card
                   key={adjustedIndex}
-                  className={`faq-card p-6 mb-6 cursor-pointer transition-all duration-300 ${isOpen ? "lg:h-[215px] md:h-[225px]" : "h-auto"}`}
+                  className={`faq-card p-6 mb-6 cursor-pointer transition-all duration-500 ease-in-out ${isOpen ? "lg:h-[215px] md:h-[225px]" : "h-auto"}`}
                   onClick={() => toggleExpand(adjustedIndex)}
                 >
                   <div className="flex justify-between gap-6 items-start">
-                    <h3 className="font-semibold lg:text-lg md:text- text-sm">
+                    <h3 className="font-semibold lg:text-lg md:text-base text-sm">
                       {item.question}
                     </h3>
                     <div className="flex-shrink-0">
                       <ArrowUpRight
-                        className={`size-5 transition-transform duration-300 ${isOpen ? "rotate-0" : "rotate-180"}`}
+                        className={`size-5 transition-transform duration-500 ease-in-out ${isOpen ? "rotate-0" : "rotate-180"}`}
                       />
                     </div>
                   </div>
-                  {isOpen && (
-                    <p className="mt-4 lg:text-sm text-xs text-light-default/80">
-                      {item.answer}
-                    </p>
-                  )}
+                  <div
+                    className={`transition-opacity duration-500 ease-in-out ${isOpen ? "opacity-100" : "opacity-0 h-0 overflow-hidden"}`}
+                  >
+                    {isOpen && (
+                      <p className="mt-4 lg:text-sm text-xs text-light-default/80">
+                        {item.answer}
+                      </p>
+                    )}
+                  </div>
                 </Card>
               );
             })}
