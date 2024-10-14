@@ -303,7 +303,7 @@ export function About() {
   const constraintsRef = React.useRef(null);
 
   return (
-    <div className="py-20 lg:py-28">
+    <div className="py-20 lg:py-28 overflow-x-hidden">
       <div className="container">
         <SectionHeader
           eyebrow="About Me"
@@ -331,7 +331,7 @@ export function About() {
             <div>
               <motion.div
                 animate={{
-                  x: [0, "78%", 0],
+                  x: [0, "75%", 0],
                 }}
                 transition={{
                   duration: 10,
