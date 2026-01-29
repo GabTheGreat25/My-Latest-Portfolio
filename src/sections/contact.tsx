@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
-import { Card } from "@/components";
 import { ArrowUpRight } from "@/assets/icons";
-import { Grain, Gab } from "@/assets/images";
+import { Gab, Grain } from "@/assets/images";
+import { Card } from "@/components";
+import Image from "next/image";
+import React from "react";
 
 export function Contact() {
   const [hoveredButton, setHoveredButton] = React.useState<string | null>(null);
@@ -74,8 +74,8 @@ export function Contact() {
                 <h2 className="uppercase font-semibold tracking-widest bg-gradient-to-r from-success-secondary to-info-default text-center text-transparent bg-clip-text mx-2 md:text-2xl">
                   Gabriel Mendoza
                 </h2>
-                <p className="font-serif mt-1 md:text-xl">
-                  Full Stack Developer
+                <p className="font-serif mt-1 text-base tracking-wider">
+                  Full Stack Developer & Quality Assurance Tester
                 </p>
                 <p className="mt-4 md:text-base text-sm text-justify">
                   Let&#39;s make your project a reality together! With extensive

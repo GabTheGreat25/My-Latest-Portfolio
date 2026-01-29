@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
+import { ArrowUpRight, CheckCircle } from "@/assets/icons";
 import * as Mockup from "@/assets/images";
-import { CheckCircle, ArrowUpRight } from "@/assets/icons";
-import { SectionHeader, Card } from "@/components";
+import { Card, SectionHeader } from "@/components";
+import Image from "next/image";
+import React from "react";
 
 const portfolioProjects = [
   {
@@ -336,7 +336,7 @@ export function Projects() {
     <div className="pb-16 lg:py-24">
       <div className="container">
         <SectionHeader
-          eyebrow="2 Years Of Freelance Results"
+          eyebrow="3 Years Of Freelance Results"
           title="Featured Projects"
           description="Discover the creative solutions I've crafted to bring ideas to life."
         />

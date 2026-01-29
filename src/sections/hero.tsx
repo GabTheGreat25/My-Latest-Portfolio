@@ -1,11 +1,11 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
-import { MemojiComputer, Grain, BlobSunglasses } from "@/assets/images";
-import * as Icon from "@/assets/icons";
 import { Resume } from "@/assets/files";
+import * as Icon from "@/assets/icons";
+import { BlobSunglasses, Grain, MemojiComputer } from "@/assets/images";
 import { HeroOrbit, TechIcons } from "@/components";
+import Image from "next/image";
+import React from "react";
 
 export function Hero() {
   const [isHovered, setIsHovered] = React.useState(false);
@@ -66,7 +66,7 @@ export function Hero() {
           <div
             className={`transition-opacity duration-1000 ease-in-out ${isTransitioning ? "opacity-0" : "opacity-100"}`}
           >
-            <HeroOrbit size={440} rotation={-14}>
+            <HeroOrbit size={450} rotation={-13}>
               <a
                 href="https://github.com/GabTheGreat25"
                 target="_blank"
@@ -96,7 +96,7 @@ export function Hero() {
                 <TechIcons component={Icon.Codepen} size={"size-16"} />
               </a>
             </HeroOrbit>
-            <HeroOrbit size={525} rotation={233}>
+            <HeroOrbit size={535} rotation={233}>
               <a
                 href="https://medium.com/@gabrielarafolmendoza25"
                 target="_blank"
@@ -126,7 +126,7 @@ export function Hero() {
                 <TechIcons component={Icon.Stackoverflow} size={"size-16"} />
               </a>
             </HeroOrbit>
-            <HeroOrbit size={540} rotation={200}>
+            <HeroOrbit size={560} rotation={200}>
               <a
                 href="https://dev.to/gabthegreat25"
                 target="_blank"
@@ -168,7 +168,7 @@ export function Hero() {
             </HeroOrbit>
             <HeroOrbit size={590} rotation={50}>
               <a
-                href="https://t.me/Gabz092501"
+                href="https://t.me/Gaabsyy"
                 target="_blank"
                 rel="noreferrer"
                 className="hero__hover"
@@ -186,7 +186,7 @@ export function Hero() {
                 <TechIcons component={Icon.Figma} size={"size-16"} />
               </a>
             </HeroOrbit>
-            <HeroOrbit size={605} rotation={263}>
+            <HeroOrbit size={615} rotation={263}>
               <a
                 href="https://codesandbox.io/u/gabthegreat25"
                 target="_blank"
@@ -372,12 +372,12 @@ export function Hero() {
             </div>
           </div>
           <div className="max-w-lg mx-auto">
-            <h1 className="font-serif text-3xl md:text-5xl text-center mt-8 mx-6 md:mx-0 tracking-wide">
+            <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl text-center mt-8 mx-6 md:mx-0 tracking-wide">
               I&rsquo;m{" "}
               <span className="tracking-widest bg-gradient-to-r from-success-secondary to-info-default text-center text-transparent bg-clip-text animate-shine shadow-lg glow">
                 Gabriel
               </span>{" "}
-              A Full Stack Developer
+              A Full Stack Developer & Quality Assurance Tester
             </h1>
             <p className="mt-4 md:mx-2 mx-4 text-justify text-light-default/80 md:text-sm text-xs">
               As a cum laude graduate holding a Bachelor of Science in

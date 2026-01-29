@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { SectionHeader, Card, CardHeader, ToolboxItems } from "@/components";
 import * as Icon from "@/assets/icons";
-import { Music, Map, MemojiSmile, GabShades, MonaCat } from "@/assets/images";
+import { GabShades, Map, MemojiSmile, MonaCat, Music } from "@/assets/images";
+import { Card, CardHeader, SectionHeader, ToolboxItems } from "@/components";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import React, { useState } from "react";
 
 const toolBoxItems1 = [
   {
@@ -317,16 +317,17 @@ export function About() {
             </div>
           </div>
           <div>
-            <p className="text-lg pt-10 text-justify sm:text-base">
-              Experienced Full Stack Developer with 2 years of diverse
-              experience in freelancing, bootcamps, internships, and hackathons,
-              including being a competition finalist, specializing in crafting
-              seamless user experiences, backend development, mobile app
-              creation, and scalable solutions. Committed to continuous learning
-              and professional growth, actively engaging in tech communities,
-              volunteering, and attending industry seminars, while consistently
-              delivering high-quality, innovative results that solve complex
-              challenges.
+            <p className="text-lg pt-10 mb-1 text-justify sm:text-base">
+              Full Stack Developer and Quality Assurance Tester with 3 years of
+              diverse experience across freelancing, bootcamps, internships, and
+              hackathons, including recognition as a competition finalist.
+              Experienced in building user-centric applications while applying
+              strong quality assurance practices such as manual testing,
+              debugging, and validation to ensure reliable, scalable solutions.
+              Actively collaborates with developers and QA teams, values clear
+              documentation and testing processes, and is committed to
+              continuous learning, professional growth, and delivering
+              high-quality, innovative results that solve complex challenges.
             </p>
             <div>
               <motion.div
