@@ -66,7 +66,9 @@ export function Contact() {
                 <Image
                   src={Gab}
                   alt="Gabriel Mendoza"
-                  layout="responsive"
+                  width={500}
+                  height={700}
+                  priority
                   className="hover:scale-105 duration-500 ease-in-out object-cover"
                 />
               </div>
