@@ -66,10 +66,7 @@ export function Contact() {
                 <Image
                   src={Gab}
                   alt="Gabriel Mendoza"
-                  width={500}
-                  height={700}
-                  priority
-                  className="hover:scale-105 duration-500 ease-in-out object-cover"
+                  className="hover:scale-105 lg:h-[23rem] duration-500 ease-in-out"
                 />
               </div>
               <div className="text-center px-6">
@@ -79,13 +76,16 @@ export function Contact() {
                 <p className="font-serif mt-1 text-base tracking-wider">
                   Full Stack Developer & Quality Assurance Tester
                 </p>
-                <p className="mt-4 md:text-base text-sm text-justify">
-                  Let&#39;s make your project a reality together! With extensive
-                  experience in full-stack development and a commitment to
-                  creating innovative solutions, I deliver results that fit your
-                  specific needs. Whether you&#39;re launching a new app or
-                  upgrading an existing one, I&#39;m ready to assist you every
-                  step of the way.
+                <p className="mt-4 md:text-base text-sm text-justify md:tracking-wider">
+                  Let&#39;s make your project a reality! With extensive
+                  experience in full stack development and QA testing, I create
+                  innovative, reliable, scalable, secure, and high-performing
+                  solutions tailored to your needs. Every application is
+                  visually appealing, functional, and thoroughly tested for
+                  performance, usability, accessibility, and reliability.
+                  Whether launching a new app, upgrading a system, or improving
+                  software quality, I&#39;m here to assist every step of the
+                  way.
                 </p>
               </div>
             </Card>
